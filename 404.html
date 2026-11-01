@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found — Justin Grant</title>
+<title>Not sprouted yet — Justin Grant</title>
 <meta name="description" content="This page doesn't exist.">
 <meta name="robots" content="noindex">
 <meta name="author" content="Justin Grant">
@@ -174,13 +174,13 @@ p { margin: 0; }
 body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
     radial-gradient(circle at 86% 14%, rgba(245,170,115,.30) 0 5px, transparent 6px),
-    radial-gradient(circle at 90% 20%, rgba(245,170,115,.24) 0 3px, transparent 4px),
+    radial-gradient(6px 3.5px at 90% 20%, rgba(200,130,80,.30) 0 90%, transparent 100%),
     radial-gradient(circle at 81% 9%, rgba(245,170,115,.22) 0 2.5px, transparent 3.5px),
-    radial-gradient(circle at 93% 11%, rgba(245,170,115,.20) 0 2px, transparent 3px),
+    radial-gradient(3.5px 6px at 93% 11%, rgba(200,130,80,.26) 0 90%, transparent 100%),
     radial-gradient(circle at 78% 22%, rgba(245,170,115,.18) 0 4px, transparent 5px),
     radial-gradient(circle at 12% 84%, rgba(245,170,115,.22) 0 4px, transparent 5px),
-    radial-gradient(circle at 17% 90%, rgba(245,170,115,.18) 0 2.5px, transparent 3.5px),
-    radial-gradient(circle at 8% 78%, rgba(245,170,115,.16) 0 2px, transparent 3px),
+    radial-gradient(6px 3.5px at 17% 90%, rgba(200,130,80,.26) 0 90%, transparent 100%),
+    radial-gradient(3.5px 6px at 8% 78%, rgba(200,130,80,.22) 0 90%, transparent 100%),
     radial-gradient(ellipse 420px 300px at 88% 12%, rgba(247,186,140,.22), transparent 70%),
     radial-gradient(ellipse 260px 200px at 72% 26%, rgba(247,186,140,.12), transparent 70%),
     radial-gradient(ellipse 480px 320px at 8% 88%, rgba(247,186,140,.18), transparent 70%),
@@ -191,6 +191,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 }
 @media (max-width: 700px) { body::before { opacity: .75; } }
 @media print { body::before { display: none; } }
+.sprout { display: block; margin-bottom: 20px; }
 </style>
 </head>
 <body>
@@ -207,8 +208,9 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 
   <main id="main">
     <section class="cv">
-      <h1>That page doesn't exist.</h1>
-      <p class="lede">The link may be old, or the address may have a typo. The work is all on the home page.</p>
+      <svg class="sprout" viewBox="0 0 64 64" width="72" height="72" aria-hidden="true" focusable="false"><path d="M32 58V30" stroke="#3d6e48" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M32 34C32 22 24 14 10 14c0 12 8 20 22 20z" fill="#5f9c6c"/><path d="M32 30c0-10 7-17 20-17 0 11-7 17-20 17z" fill="#7fb38a"/><ellipse cx="32" cy="59" rx="14" ry="3" fill="#e28a52" opacity=".35"/></svg>
+      <h1>This page hasn't sprouted yet.</h1>
+      <p class="lede">The link may be old, or the address may have a typo. Everything that's grown so far is on the home page.</p>
       <a class="write" href="/">Go to the home page</a>
     </section>
   </main>
@@ -222,5 +224,6 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     </nav>
   </footer>
 </div>
+<script>console.log("%c🌱 You found the garden.", "font: 600 16px sans-serif; color: #3d6e48", "\nWhen I'm not designing, I'm growing vegetables. Currently growing: whatever's in season, and a design system.\nSay hi: justin@justingrant.design");</script>
 </body>
 </html>
