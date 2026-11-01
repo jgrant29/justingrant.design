@@ -193,6 +193,27 @@ p { margin: 0; }
 .checks b { display: block; font-weight: 600; }
 .checks span { font-size: 15px; color: var(--muted); }
 .badge { display: inline-block; margin-top: 14px; padding: 5px 12px; border-radius: 99px; background: var(--green-ink); color: #fff; font-size: 13px; font-weight: 500; letter-spacing: .01em; }
+/* Background: soft angles and a light-orange splatter, fixed behind content */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(circle at 86% 14%, rgba(245,170,115,.30) 0 5px, transparent 6px),
+    radial-gradient(circle at 90% 20%, rgba(245,170,115,.24) 0 3px, transparent 4px),
+    radial-gradient(circle at 81% 9%, rgba(245,170,115,.22) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 93% 11%, rgba(245,170,115,.20) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 22%, rgba(245,170,115,.18) 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 84%, rgba(245,170,115,.22) 0 4px, transparent 5px),
+    radial-gradient(circle at 17% 90%, rgba(245,170,115,.18) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 8% 78%, rgba(245,170,115,.16) 0 2px, transparent 3px),
+    radial-gradient(ellipse 420px 300px at 88% 12%, rgba(247,186,140,.22), transparent 70%),
+    radial-gradient(ellipse 260px 200px at 72% 26%, rgba(247,186,140,.12), transparent 70%),
+    radial-gradient(ellipse 480px 320px at 8% 88%, rgba(247,186,140,.18), transparent 70%),
+    radial-gradient(ellipse 220px 160px at 24% 74%, rgba(247,186,140,.10), transparent 70%),
+    linear-gradient(118deg, transparent 0 64%, rgba(247,186,140,.10) 64% 71%, transparent 71%),
+    linear-gradient(118deg, transparent 0 73%, rgba(247,186,140,.06) 73% 76%, transparent 76%),
+    linear-gradient(162deg, rgba(247,186,140,.08) 0 14%, transparent 14%);
+}
+@media (max-width: 700px) { body::before { opacity: .75; } }
+@media print { body::before { display: none; } }
 </style>
 </head>
 <body>
@@ -284,7 +305,7 @@ p { margin: 0; }
       <h2 id="built-h">This site is built light, on purpose.</h2>
       <p class="intro">I directed it and Claude Code wrote it: plain HTML and CSS, with no frameworks or trackers. Fonts are hosted with the site, images are WebP with fixed sizes so nothing jumps while loading, and structured data plus an <a href="llms.txt">llms.txt</a> summary help search engines and AI tools read it. Measured with Lighthouse on November 1, 2026.</p>
       <dl class="specs">
-        <div><dt>179 KB</dt><dd>Total home page weight, fonts and images included</dd></div>
+        <div><dt>182 KB</dt><dd>Total home page weight, fonts and images included</dd></div>
         <div><dt>8</dt><dd>Requests to load the home page</dd></div>
         <div><dt>0.7 KB</dt><dd>JavaScript, only for the copy-email button</dd></div>
         <div><dt>0</dt><dd>Frameworks, cookies, or trackers</dd></div>

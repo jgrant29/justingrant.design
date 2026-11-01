@@ -170,6 +170,27 @@ p { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) { .entry, .arrow { transition: none; } }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+/* Background: soft angles and a light-orange splatter, fixed behind content */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(circle at 86% 14%, rgba(245,170,115,.30) 0 5px, transparent 6px),
+    radial-gradient(circle at 90% 20%, rgba(245,170,115,.24) 0 3px, transparent 4px),
+    radial-gradient(circle at 81% 9%, rgba(245,170,115,.22) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 93% 11%, rgba(245,170,115,.20) 0 2px, transparent 3px),
+    radial-gradient(circle at 78% 22%, rgba(245,170,115,.18) 0 4px, transparent 5px),
+    radial-gradient(circle at 12% 84%, rgba(245,170,115,.22) 0 4px, transparent 5px),
+    radial-gradient(circle at 17% 90%, rgba(245,170,115,.18) 0 2.5px, transparent 3.5px),
+    radial-gradient(circle at 8% 78%, rgba(245,170,115,.16) 0 2px, transparent 3px),
+    radial-gradient(ellipse 420px 300px at 88% 12%, rgba(247,186,140,.22), transparent 70%),
+    radial-gradient(ellipse 260px 200px at 72% 26%, rgba(247,186,140,.12), transparent 70%),
+    radial-gradient(ellipse 480px 320px at 8% 88%, rgba(247,186,140,.18), transparent 70%),
+    radial-gradient(ellipse 220px 160px at 24% 74%, rgba(247,186,140,.10), transparent 70%),
+    linear-gradient(118deg, transparent 0 64%, rgba(247,186,140,.10) 64% 71%, transparent 71%),
+    linear-gradient(118deg, transparent 0 73%, rgba(247,186,140,.06) 73% 76%, transparent 76%),
+    linear-gradient(162deg, rgba(247,186,140,.08) 0 14%, transparent 14%);
+}
+@media (max-width: 700px) { body::before { opacity: .75; } }
+@media print { body::before { display: none; } }
 </style>
 </head>
 <body>
