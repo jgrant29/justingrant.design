@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Justin Grant — UX Designer and Researcher</title>
+<meta name="description" content="Justin Grant, UX designer and researcher. Discovery, user testing, and systems thinking for complex products.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Justin Grant">
+<meta name="theme-color" content="#f1f1ee">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Justin Grant">
+<meta property="og:title" content="Justin Grant — UX Designer and Researcher">
+<meta property="og:description" content="Justin Grant, UX designer and researcher. Discovery, user testing, and systems thinking for complex products.">
+<link rel="canonical" href="https://justingrant.design/">
+<meta property="og:url" content="https://justingrant.design/">
+<meta property="og:image" content="https://justingrant.design/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Justin Grant, UX designer and researcher for complex SaaS, open-source, and e-commerce products.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23e28a52'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='700' text-anchor='middle' fill='%2323221f'%3EJG%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "name": "Justin Grant", "jobTitle": "UX Designer and Researcher", "email": "mailto:justin@justingrant.design", "sameAs": ["https://www.linkedin.com/in/justgrant5/"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of California, Santa Cruz"}, {"@type": "CollegeOrUniversity", "name": "University of California, Los Angeles"}], "knowsAbout": ["UX research", "Service design", "Information architecture", "Data governance", "Payment systems", "Complex workflows", "Systems thinking", "Product strategy", "Accessibility"], "@id": "#justin", "url": "https://justingrant.design/"}, {"@type": "WebSite", "name": "Justin Grant, UX Designer and Researcher", "author": {"@id": "#justin"}, "url": "https://justingrant.design/"}]}</script>
+<link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/work-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/work-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/work-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/hanken-grotesk-latin-600-normal.woff2) format("woff2"); }
+/* Justin Grant — portfolio
+   Light gray, soft orange, green. Work Sans.
+   Layout: one quiet column, unboxed work entries, type does the hierarchy. */
+:root {
+  --bg: #f1f1ee;
+  --paper: #ffffff;
+  --ink: #23221f;
+  --muted: #6b6a64;
+  --rule: #d9d8d2;
+  --orange: #e28a52;
+  --orange-ink: #a9531d;
+  --green: #5f9c6c;
+  --green-ink: #3d6e48;
+  --max: 1040px;
+  --read: 660px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.55; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-color: var(--orange); }
+a:hover { color: var(--orange-ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--green-ink); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { margin: 0; font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
+.brand strong { font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; }
+p { margin: 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.read { max-width: var(--read); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+
+.label { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* header + footer */
+.site-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-block: 32px; }
+.brand { text-decoration: none; line-height: 1.25; }
+.brand strong { display: block; font-size: 17px; font-weight: 600; }
+.brand span { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
+.site-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 24px 48px; margin-top: 96px; border-top: 1px solid var(--rule); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.site-foot nav { display: flex; gap: 24px; }
+.site-foot a { text-decoration: none; }
+.site-foot a:hover { color: var(--ink); }
+
+/* home */
+.hero { padding-block: 56px 72px; }
+.hero h1 { font-size: clamp(30px, 4.2vw, 44px); max-width: 26ch; letter-spacing: -.015em; }
+.hero p { margin-top: 28px; max-width: 36em; font-size: 19px; }
+
+.work { display: grid; gap: 16px; }
+.entry { position: relative; display: grid; grid-template-columns: 1fr; gap: 24px; padding: 20px; margin-inline: -20px; border: 1px solid transparent; border-radius: 16px; text-decoration: none; color: inherit; transition: border-color .2s, background .2s; }
+.entry:hover { border-color: var(--rule); background: rgba(255,255,255,.45); color: inherit; }
+.entry-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 12px; }
+.arrow { color: var(--orange); font-size: 20px; line-height: 1; transition: transform .2s; }
+.entry:hover .arrow { transform: translate(2px, -2px); }
+.entry h2 { font-size: 24px; margin-bottom: 14px; }
+.entry .desc { max-width: 32em; }
+.outcome { margin-top: 32px; }
+.outcome .label { color: var(--green-ink); display: block; margin-bottom: 4px; }
+.outcome p { font-size: 15px; }
+.frame { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; padding: 14px; }
+.frame img { width: 100%; height: auto; border-radius: 4px; }
+@media (min-width: 860px) {
+  .entry { grid-template-columns: 1fr 1fr; gap: 48px; padding: 32px; margin-inline: -32px; align-items: center; }
+  .entry.flip .frame { order: -1; }
+}
+
+.section { padding-top: 104px; }
+.section > h2 { font-size: 28px; max-width: 24ch; }
+.section > .intro { margin-top: 20px; max-width: 36em; }
+.duo { display: grid; gap: 48px; margin-top: 48px; }
+@media (min-width: 860px) { .duo { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.duo .label { display: block; margin-bottom: 16px; }
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.plain b { font-weight: 600; }
+
+.side-work { display: grid; gap: 40px; margin-top: 40px; }
+@media (min-width: 860px) { .side-work { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.side-work h3 { font-size: 21px; margin: 10px 0 12px; }
+
+.contact { padding-top: 104px; }
+.contact h2 { font-size: 28px; max-width: 24ch; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 24px; }
+.email-text { font-size: 20px; user-select: all; }
+.copy, .write { font: inherit; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 9px 16px; border-radius: 99px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; }
+.write { background: var(--ink); color: var(--bg); }
+.copy:hover { border-color: var(--green-ink); color: var(--green-ink); }
+.write:hover { background: var(--green-ink); border-color: var(--green-ink); color: #fff; }
+
+/* case pages */
+.back { display: inline-block; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.case-head { padding-block: 40px 40px; }
+.case-head h1 { font-size: clamp(30px, 4.2vw, 44px); max-width: 22ch; margin-top: 14px; letter-spacing: -.015em; }
+.case-head .lede { margin-top: 24px; max-width: 36em; font-size: 19px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px 32px; margin: 0; padding-block: 24px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.facts dt { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 6px 0 0; font-size: 16px; }
+.facts .wide { grid-column: 1 / -1; }
+.facts .wide dt { color: var(--green-ink); }
+.block { padding-top: 64px; }
+.block h2 { font-size: 24px; }
+.block p { margin-top: 16px; }
+.block ul { margin: 16px 0 0; padding-left: 20px; }
+.block li { margin: 10px 0; }
+.pull { margin-top: 28px; font-size: 21px; line-height: 1.45; color: var(--ink); padding-left: 20px; border-left: 2px solid var(--orange); }
+.method { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--green-ink); }
+.figure { margin: 64px 0 0; }
+.figure figcaption { font-size: 15px; color: var(--muted); margin-top: 12px; max-width: var(--read); }
+.next { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 72px; }
+.next a { text-decoration: none; }
+.next small { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.next strong { font-weight: 500; font-size: 20px; }
+
+/* about + résumé */
+.about { display: grid; gap: 48px; padding-top: 40px; align-items: start; }
+@media (min-width: 860px) { .about { grid-template-columns: 280px 1fr; gap: 64px; } }
+.portrait { aspect-ratio: 1 / 1; max-width: 100%; border-radius: 16px; overflow: hidden; background: var(--paper); border: 1px solid var(--rule); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about h1 { font-size: clamp(30px, 4.2vw, 40px); letter-spacing: -.015em; }
+.about p { margin-top: 20px; }
+.about .write { display: inline-block; margin-top: 32px; }
+.cv { padding-top: 40px; }
+.cv h1 { font-size: clamp(30px, 4.2vw, 40px); }
+.cv .lede { margin-top: 20px; max-width: 36em; }
+.cv-sec { margin-top: 56px; }
+.cv-sec > h2 { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--green-ink); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.job { padding-block: 24px; border-bottom: 1px solid var(--rule); }
+.job:last-child { border-bottom: 0; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.job h3 { font-size: 20px; }
+.job .when { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.job .org { color: var(--orange-ink); font-size: 16px; margin-top: 2px; }
+.job ul { margin: 12px 0 0; padding-left: 20px; }
+.job li { margin: 6px 0; }
+.cv-skills { margin-top: 16px; }
+.cv .write { display: inline-block; margin-top: 40px; }
+
+@media (prefers-reduced-motion: reduce) { .entry, .arrow { transition: none; } }
+.sources { margin-top: 20px !important; font-size: 14px; color: var(--muted); }
+.sources a { color: var(--muted); }
+.block li b { font-weight: 600; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.built { padding-top: 104px; }
+.built h2 { font-size: 28px; max-width: 24ch; }
+.built .intro { margin-top: 20px; max-width: 38em; color: var(--muted); }
+.specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 40px; margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--rule); }
+.specs div { min-width: 0; }
+@media (min-width: 760px) { .specs { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.specs dt { font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; font-weight: 600; font-size: 34px; line-height: 1.1; color: var(--orange-ink); font-variant-numeric: tabular-nums; }
+.specs dd { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+.checks-h { font-size: 21px; margin-top: 64px; }
+.checks-intro { margin-top: 12px; max-width: 38em; color: var(--muted); }
+.checks { list-style: none; margin: 28px 0 0; padding: 0; display: grid; gap: 20px 48px; }
+@media (min-width: 860px) { .checks { grid-template-columns: 1fr 1fr; } }
+.checks li { position: relative; padding-left: 32px; min-width: 0; }
+.checks li::before { content: ""; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--green-ink); }
+.checks li::after { content: ""; position: absolute; left: 6px; top: 8px; width: 5px; height: 8px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.checks b { display: block; font-weight: 600; }
+.checks span { font-size: 15px; color: var(--muted); }
+.badge { display: inline-block; margin-top: 14px; padding: 5px 12px; border-radius: 99px; background: var(--green-ink); color: #fff; font-size: 13px; font-weight: 500; letter-spacing: .01em; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="index.html"><strong>Justin Grant</strong><span>UX Designer &amp; Researcher</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="resume.html">Résumé</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1>Hi, I'm Justin, a UX designer and researcher who makes complex SaaS, open-source, and e-commerce products easy to trust and easy to use.</h1>
+      <p>I work where the hard parts live: data governance, payments, and workflows that cross many teams. I map how the work really flows, turn it into product strategy, and test it at every stage: generative to find the problem, formative to shape the answer, and summative to prove it worked. Ten years across enterprise tech, education, HR, and open-source AI, usually in the middle of product, engineering, and the business.</p>
+    </section>
+
+    <div class="work">
+      <a class="entry" href="mdc.html">
+        <div>
+          <div class="entry-top"><span class="label">Mozilla Data Collective | Data Platform | Senior Designer</span><span class="arrow" aria-hidden="true">↗</span></div>
+          <h2>Designing the next phase of an ethical data platform</h2>
+          <p class="desc">I designed the next phase of Mozilla Data Collective: the site architecture, access controls that let data owners decide who gets in, quality signals buyers can check, and a services marketplace. Pricing research across 200+ datasets, a survey, and a false door validated what people would pay before anything was built.</p>
+          <span class="badge">Built with Claude Code + Figma MCP. Zero hand-placed pixels.</span>
+          <div class="outcome"><span class="label">Outcome</span><p>The architecture and flows for 600+ datasets from 190+ vetted organizations in 300+ languages. Request to Access launched in May 2026.</p></div>
+        </div>
+        <div class="frame"><img src="images/mdc-quality-card.webp" width="960" height="601" decoding="async" alt="A dataset page with trust and quality signals: documentation score, standards, licence, access, and third-party verification." loading="eager" fetchpriority="high"></div>
+      </a>
+
+      <a class="entry flip" href="common-voice.html">
+        <div>
+          <div class="entry-top"><span class="label">Mozilla Common Voice | Voice AI | 0-to-1</span><span class="arrow" aria-hidden="true">↗</span></div>
+          <h2>Fixing bad voice data before it's recorded</h2>
+          <p class="desc">Spontaneous Speech records unscripted answers in dozens of languages. Research showed where bad clips came from: the wrong language and badly timed recordings. I designed both out at the moment of recording.</p>
+          <div class="outcome"><span class="label">Outcome</span><p>Shipped as Spontaneous Speech 1.0 in 58 languages. By release 2.0 it covered 62 language datasets, with 357+ hours of unscripted speech collected.</p></div>
+        </div>
+        <div class="frame"><img src="images/voice-shipped-card.webp" width="960" height="653" decoding="async" alt="Shipped Spontaneous Speech recording flow in Common Voice." loading="lazy"></div>
+      </a>
+
+      <a class="entry" href="hrsimple.html">
+        <div>
+          <div class="entry-top"><span class="label">hrsimple.com | HR Compliance | Designer &amp; Developer</span><span class="arrow" aria-hidden="true">↗</span></div>
+          <h2>Making employment law readable, and worth paying for</h2>
+          <p class="desc">State employment-law manuals like the <i>New York Human Resources Manual</i>, for buyers with one urgent question. As the only designer and developer for eight years, I designed the path from a search result to a paid subscription, and a reader that makes dense legal content easy to use.</p>
+          <div class="outcome"><span class="label">Outcome</span><p>10,000 paying clients across 23 state law libraries. Staff workload cut 75 percent, and the B2B pipeline doubled from $800K to $1.6M in one year.</p></div>
+        </div>
+        <div class="frame"><img src="images/hrsimple-reader-card.webp" width="960" height="519" decoding="async" alt="The hrsimple reader: chapter list, the New York Wages and hours chapter, its forms, and an outline." loading="lazy"></div>
+      </a>
+    </div>
+
+    <section class="section">
+      <h2>Research is how a team agrees on what's true.</h2>
+      <p class="intro">I don't treat research as a phase. It runs from the first question to the release, and the method changes with what we need to know. The other half of the job is getting product, engineering, and leadership to look at the same picture.</p>
+      <div class="duo">
+        <div>
+          <span class="label">How I research</span>
+          <ul class="plain">
+            <li><b>Generative first.</b> Contextual inquiry, day-in-the-life studies, ethnography, and stakeholder interviews, including the work that happens off the platform.</li>
+            <li><b>Formative while it's cheap.</b> Cognitive walkthroughs and usability tests on rough prototypes, so the expensive decisions get made while change is easy.</li>
+            <li><b>Summative so we know.</b> Usability scores, surveys, and support signals against goals set at the start.</li>
+            <li><b>Honest about limits.</b> If a sample can't prove something, I say so. Directional is still useful when it's labeled.</li>
+          </ul>
+        </div>
+        <div>
+          <span class="label">How I think</span>
+          <ul class="plain">
+            <li><b>The unit of design is the system.</b> A form is the front stage. Behind it are reviewers, rules, databases, and the people who clean up the mess.</li>
+            <li><b>Structure before screens.</b> Flows, roles, and data first, so the team can argue with the model before we argue about pixels.</li>
+            <li><b>Tradeoffs in the open.</b> When two teams are both right, I map what breaks for each and prototype both.</li>
+            <li><b>One picture for many teams.</b> I've aligned executives, engineers, linguists, and volunteer communities around a shared map of the work.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Have a messy problem with a lot of teams involved? I'd like to hear about it.</h2>
+      <div class="email-row">
+        <span class="email-text" id="email">justin@justingrant.design</span>
+        <button class="copy" type="button" id="copy-email">Copy email</button><span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
+        <a class="write" href="mailto:justin@justingrant.design">Write to me</a>
+      </div>
+    </section>
+    <section class="built" aria-labelledby="built-h">
+      <h2 id="built-h">This site is built light, on purpose.</h2>
+      <p class="intro">I directed it and Claude Code wrote it: plain HTML and CSS, with no frameworks or trackers. Fonts are hosted with the site, images are WebP with fixed sizes so nothing jumps while loading, and structured data plus an <a href="llms.txt">llms.txt</a> summary help search engines and AI tools read it. Measured with Lighthouse on November 1, 2026.</p>
+      <dl class="specs">
+        <div><dt>179 KB</dt><dd>Total home page weight, fonts and images included</dd></div>
+        <div><dt>8</dt><dd>Requests to load the home page</dd></div>
+        <div><dt>0.7 KB</dt><dd>JavaScript, only for the copy-email button</dd></div>
+        <div><dt>0</dt><dd>Frameworks, cookies, or trackers</dd></div>
+        <div><dt>100</dt><dd>Lighthouse score for performance, accessibility, best practices, and SEO on every page</dd></div>
+        <div><dt>0</dt><dd>Layout shift while the page loads</dd></div>
+      </dl>
+      <h3 class="checks-h">Usability heuristics checklist</h3>
+      <p class="checks-intro">I review my own work against Nielsen's ten usability heuristics, so I held this site to them too. It also meets WCAG 2.1 AA: readable contrast, visible keyboard focus, alt text on every image, and reduced motion when you ask for it.</p>
+      <ul class="checks">
+        <li><b>Visibility of system status</b><span>The current page is marked in the navigation, and the copy button confirms when your email is copied.</span></li>
+        <li><b>Match with the real world</b><span>Plain language throughout. Case studies are named by what changed, not by internal project names.</span></li>
+        <li><b>User control and freedom</b><span>A skip link, a back link on every case study, and previous and next links between them.</span></li>
+        <li><b>Consistency and standards</b><span>Every case follows the same shape: problem, steps, outcome. One type system and one color system.</span></li>
+        <li><b>Error prevention</b><span>No forms to fill in or fail, and every link goes somewhere real.</span></li>
+        <li><b>Recognition rather than recall</b><span>Role, timeline, research, and outcome sit at the top of each case, so nobody has to remember them.</span></li>
+        <li><b>Flexibility and efficiency</b><span>Skimmers get the cards and outcomes. Readers get the full story. AI tools get llms.txt.</span></li>
+        <li><b>Aesthetic and minimalist design</b><span>Three case studies, a few final screens each, and no decoration that doesn't carry information.</span></li>
+        <li><b>Help users recover from errors</b><span>If the copy button can't reach your clipboard, it selects the address so you can copy it yourself.</span></li>
+        <li><b>Help and documentation</b><span>Résumé and contact on every page, and sources cited for every public metric.</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>© 2026 Justin Grant</span>
+    <nav aria-label="Footer">
+      <a href="https://www.linkedin.com/in/justgrant5/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume.html">Résumé</a>
+      <a href="#contact">Email</a>
+    </nav>
+  </footer>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var text = document.getElementById('email').textContent;
+    function done() { btn.textContent = 'Copied'; document.getElementById('copy-status').textContent = 'Email address copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 2000); }
+    function fallback() { var r = document.createRange(); r.selectNodeContents(document.getElementById('email')); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); btn.textContent = 'Selected, press Ctrl+C'; }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

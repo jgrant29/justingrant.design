@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hrsimple — Justin Grant</title>
+<meta name="description" content="How I made dense employment-law content readable, and made buying access to it feel safe, as the sole designer and developer of hrsimple.com.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Justin Grant">
+<meta name="theme-color" content="#f1f1ee">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Justin Grant">
+<meta property="og:title" content="hrsimple — Justin Grant">
+<meta property="og:description" content="How I made dense employment-law content readable, and made buying access to it feel safe, as the sole designer and developer of hrsimple.com.">
+<link rel="canonical" href="https://justingrant.design/hrsimple.html">
+<meta property="og:url" content="https://justingrant.design/hrsimple.html">
+<meta property="og:image" content="https://justingrant.design/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Justin Grant, UX designer and researcher for complex SaaS, open-source, and e-commerce products.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23e28a52'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='700' text-anchor='middle' fill='%2323221f'%3EJG%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Making employment law readable, and worth paying for", "about": "hrsimple.com employment-law library and subscription purchase flow", "author": {"@type": "Person", "name": "Justin Grant", "jobTitle": "UX Designer and Researcher", "email": "mailto:justin@justingrant.design", "sameAs": ["https://www.linkedin.com/in/justgrant5/"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of California, Santa Cruz"}, {"@type": "CollegeOrUniversity", "name": "University of California, Los Angeles"}], "knowsAbout": ["UX research", "Service design", "Information architecture", "Data governance", "Payment systems", "Complex workflows", "Systems thinking", "Product strategy", "Accessibility"], "url": "https://justingrant.design/"}, "keywords": "information-heavy UX, legal content, e-commerce, payments, accessibility", "url": "https://justingrant.design/hrsimple.html"}</script>
+<link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/work-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/work-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/work-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/hanken-grotesk-latin-600-normal.woff2) format("woff2"); }
+/* Justin Grant — portfolio
+   Light gray, soft orange, green. Work Sans.
+   Layout: one quiet column, unboxed work entries, type does the hierarchy. */
+:root {
+  --bg: #f1f1ee;
+  --paper: #ffffff;
+  --ink: #23221f;
+  --muted: #6b6a64;
+  --rule: #d9d8d2;
+  --orange: #e28a52;
+  --orange-ink: #a9531d;
+  --green: #5f9c6c;
+  --green-ink: #3d6e48;
+  --max: 1040px;
+  --read: 660px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.55; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-color: var(--orange); }
+a:hover { color: var(--orange-ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--green-ink); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { margin: 0; font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
+.brand strong { font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; }
+p { margin: 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.read { max-width: var(--read); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+
+.label { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* header + footer */
+.site-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-block: 32px; }
+.brand { text-decoration: none; line-height: 1.25; }
+.brand strong { display: block; font-size: 17px; font-weight: 600; }
+.brand span { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
+.site-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 24px 48px; margin-top: 96px; border-top: 1px solid var(--rule); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.site-foot nav { display: flex; gap: 24px; }
+.site-foot a { text-decoration: none; }
+.site-foot a:hover { color: var(--ink); }
+
+/* home */
+.hero { padding-block: 56px 72px; }
+.hero h1 { font-size: clamp(30px, 4.2vw, 44px); max-width: 24ch; letter-spacing: -.015em; }
+.hero p { margin-top: 28px; max-width: 36em; font-size: 19px; }
+
+.work { display: grid; gap: 16px; }
+.entry { position: relative; display: grid; grid-template-columns: 1fr; gap: 24px; padding: 20px; margin-inline: -20px; border: 1px solid transparent; border-radius: 16px; text-decoration: none; color: inherit; transition: border-color .2s, background .2s; }
+.entry:hover { border-color: var(--rule); background: rgba(255,255,255,.45); color: inherit; }
+.entry-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 12px; }
+.arrow { color: var(--orange); font-size: 20px; line-height: 1; transition: transform .2s; }
+.entry:hover .arrow { transform: translate(2px, -2px); }
+.entry h2 { font-size: 24px; margin-bottom: 14px; }
+.entry .desc { max-width: 32em; }
+.outcome { margin-top: 32px; }
+.outcome .label { color: var(--green-ink); display: block; margin-bottom: 4px; }
+.outcome p { font-size: 15px; }
+.frame { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; padding: 14px; }
+.frame img { width: 100%; height: auto; border-radius: 4px; }
+@media (min-width: 860px) {
+  .entry { grid-template-columns: 1fr 1fr; gap: 48px; padding: 32px; margin-inline: -32px; align-items: center; }
+  .entry.flip .frame { order: -1; }
+}
+
+.section { padding-top: 104px; }
+.section > h2 { font-size: 28px; max-width: 24ch; }
+.section > .intro { margin-top: 20px; max-width: 36em; }
+.duo { display: grid; gap: 48px; margin-top: 48px; }
+@media (min-width: 860px) { .duo { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.duo .label { display: block; margin-bottom: 16px; }
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.plain b { font-weight: 600; }
+
+.side-work { display: grid; gap: 40px; margin-top: 40px; }
+@media (min-width: 860px) { .side-work { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.side-work h3 { font-size: 21px; margin: 10px 0 12px; }
+
+.contact { padding-top: 104px; }
+.contact h2 { font-size: 28px; max-width: 24ch; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 24px; }
+.email-text { font-size: 20px; user-select: all; }
+.copy, .write { font: inherit; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 9px 16px; border-radius: 99px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; }
+.write { background: var(--ink); color: var(--bg); }
+.copy:hover { border-color: var(--green-ink); color: var(--green-ink); }
+.write:hover { background: var(--green-ink); border-color: var(--green-ink); color: #fff; }
+
+/* case pages */
+.back { display: inline-block; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.case-head { padding-block: 40px 40px; }
+.case-head h1 { font-size: clamp(30px, 4.2vw, 44px); max-width: 22ch; margin-top: 14px; letter-spacing: -.015em; }
+.case-head .lede { margin-top: 24px; max-width: 36em; font-size: 19px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px 32px; margin: 0; padding-block: 24px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.facts dt { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 6px 0 0; font-size: 16px; }
+.facts .wide { grid-column: 1 / -1; }
+.facts .wide dt { color: var(--green-ink); }
+.block { padding-top: 64px; }
+.block h2 { font-size: 24px; }
+.block p { margin-top: 16px; }
+.block ul { margin: 16px 0 0; padding-left: 20px; }
+.block li { margin: 10px 0; }
+.pull { margin-top: 28px; font-size: 21px; line-height: 1.45; color: var(--ink); padding-left: 20px; border-left: 2px solid var(--orange); }
+.method { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--green-ink); }
+.figure { margin: 64px 0 0; }
+.figure figcaption { font-size: 15px; color: var(--muted); margin-top: 12px; max-width: var(--read); }
+.next { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 72px; }
+.next a { text-decoration: none; }
+.next small { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.next strong { font-weight: 500; font-size: 20px; }
+
+/* about + résumé */
+.about { display: grid; gap: 48px; padding-top: 40px; align-items: start; }
+@media (min-width: 860px) { .about { grid-template-columns: 280px 1fr; gap: 64px; } }
+.portrait { aspect-ratio: 1 / 1; max-width: 100%; border-radius: 16px; overflow: hidden; background: var(--paper); border: 1px solid var(--rule); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about h1 { font-size: clamp(30px, 4.2vw, 40px); letter-spacing: -.015em; }
+.about p { margin-top: 20px; }
+.about .write { display: inline-block; margin-top: 32px; }
+.cv { padding-top: 40px; }
+.cv h1 { font-size: clamp(30px, 4.2vw, 40px); }
+.cv .lede { margin-top: 20px; max-width: 36em; }
+.cv-sec { margin-top: 56px; }
+.cv-sec > h2 { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--green-ink); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.job { padding-block: 24px; border-bottom: 1px solid var(--rule); }
+.job:last-child { border-bottom: 0; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.job h3 { font-size: 20px; }
+.job .when { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.job .org { color: var(--orange-ink); font-size: 16px; margin-top: 2px; }
+.job ul { margin: 12px 0 0; padding-left: 20px; }
+.job li { margin: 6px 0; }
+.cv-skills { margin-top: 16px; }
+.cv .write { display: inline-block; margin-top: 40px; }
+
+@media (prefers-reduced-motion: reduce) { .entry, .arrow { transition: none; } }
+.sources { margin-top: 20px !important; font-size: 14px; color: var(--muted); }
+.sources a { color: var(--muted); }
+.block li b { font-weight: 600; }
+.step { display: block; font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--orange-ink); margin-bottom: 10px; }
+.think { margin-top: 20px; padding-left: 20px; border-left: 2px solid var(--green); color: var(--muted); font-size: 17px; }
+.think b { color: var(--green-ink); font-weight: 600; display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.note-line { margin-top: 16px; font-size: 14px; color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="index.html"><strong>Justin Grant</strong><span>UX Designer &amp; Researcher</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="resume.html">Résumé</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <a class="back" href="index.html">← All work</a>
+    <header class="case-head">
+      <span class="label">hrsimple.com | HR Compliance | Designer &amp; Developer</span>
+      <h1>Making employment law readable, and worth paying for</h1>
+      <p class="lede">hrsimple was the online home of the HR Compliance Library from American Chamber of Commerce Resources: state manuals like the <i>New York Human Resources Manual</i>, written by employment-law firms such as Cozen O'Connor and covering more than 30 topics each, from hiring through termination. The person buying is usually an HR manager or small-business owner with one urgent question and no time for a binder. For eight years I was the only designer and developer, and my job was to make that much legal content usable, and make paying for it feel like an easy call.</p>
+    </header>
+
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Sole designer and developer</dd></div>
+      <div><dt>Timeline</dt><dd>2015 – 2022</dd></div>
+      <div><dt>Worked with</dt><dd>Partner employment-law firms, editors, sales, and support staff</dd></div>
+      <div><dt>Research</dt><dd>Staff observation, search and purchase analytics, WCAG audits and screen-reader testing</dd></div>
+      <div class="wide"><dt>Outcome</dt><dd>10,000 paying clients across 23 state law libraries. Staff workload cut 75 percent, and the B2B pipeline doubled from $800K to $1.6M in one year.</dd></div>
+    </dl>
+
+    <div class="read">
+      <section class="block">
+        <h2>The buyer's real question</h2>
+        <p>Nobody wakes up wanting an employment-law library. They want to know if they owe someone overtime, or what to put in a termination letter. By the time they're thinking about paying, they're asking three things:</p>
+        <ul>
+          <li>Does this cover my state, and my problem?</li>
+          <li>Can I trust who wrote it, and is it current?</li>
+          <li>Will I actually be able to find the answer once I'm in?</li>
+        </ul>
+        <p>So the product had two jobs. Make dense legal content easy to use, and answer those three questions before asking for a credit card. The rest of this case follows one buyer through that path.</p>
+        <p class="pull">People don't buy information. They buy the confidence that they'll find the right answer fast.</p>
+      </section>
+
+      <section class="block">
+        <span class="step">Step 1 · Land on an answer</span>
+        <h2>Let people see it's useful before the paywall</h2>
+        <p>Most buyers arrived from search, straight onto a single chapter. I modeled the law as books, chapters, and sections from the first weeks of the project, so every chapter could be its own indexed page with its update date, its authors, and structured data for search engines.</p>
+        <p>Visitors get a real opening, the full outline of the chapter, and who wrote it. The gate comes after they've seen the content is good, and it offers the low-risk path first: a 7-day free trial, with a phone number for people who'd rather talk.</p>
+        <p class="think"><b>Thinking</b>A gate before any content asks for trust you haven't earned. A gate after a real answer, with the rest of the outline visible, turns curiosity into a reason to sign up.</p>
+      </section>
+    </div>
+
+    <figure class="figure"><div class="frame"><img src="images/hrsimple-preview.webp" width="1600" height="972" decoding="async" alt="A visitor's view of the Wages and hours chapter of the New York Human Resources Manual: breadcrumb, title, update date and authors, two paragraphs that fade out, a panel offering a 7-day free trial or plans, and the chapter outline on the right." loading="lazy"></div>
+      <figcaption>A visitor lands on a chapter from search. The outline and authors are visible, and the trial is the first option.</figcaption>
+    </figure>
+
+    <div class="read">
+      <section class="block">
+        <span class="step">Step 2 · Choose a state and a plan</span>
+        <h2>Show everything they're buying</h2>
+        <p>The product page answers the trust questions directly. It names the state, says which law firm wrote it and who edited it, and lists the manual's real chapters, from "Snapshot: an HR audit" to "Termination," with free samples marked.</p>
+        <p>The choice is kept to two plans with one plain difference between them: online only, or online plus the printed guide. Anyone still unsure gets the trial again, one line under the button.</p>
+        <p class="think"><b>Thinking</b>With a dense product, the table of contents is the sales pitch. People decide by scanning for the chapter they need, so the chapter list sits right under the buy decision instead of three clicks away.</p>
+      </section>
+    </div>
+
+    <figure class="figure"><div class="frame"><img src="images/hrsimple-product.webp" width="1600" height="1113" decoding="async" alt="The New York Human Resources Manual product page: plain-English description naming the authors, four included features, the HR Compliance Library publisher note, two plan options with Online access selected, an Add to cart button, a free trial link, and a Chapters tab listing the manual's chapters with two marked as samples." loading="lazy"></div>
+      <figcaption>One page answers coverage, authorship, and format, with the full chapter list under the plan choice.</figcaption>
+    </figure>
+
+    <div class="read">
+      <section class="block">
+        <span class="step">Step 3 · Check out</span>
+        <h2>Four labeled steps, and access right away</h2>
+        <p>Checkout runs in four labeled steps: cart, details, review, payment. Discount codes sit in the cart, where people look for them. Shipping on the printed guide is free, so there's no surprise at the end.</p>
+        <p>Online access starts the moment payment clears, and the confirmation page links straight into the library and any webinars in the order. The book can take a few days. The answer can't.</p>
+      </section>
+    </div>
+
+    <figure class="figure"><div class="frame"><img src="images/hrsimple-checkout.webp" width="1600" height="748" decoding="async" alt="Step one of a four-step checkout: a cart with the New York manual and a live webinar, a discount code field, and an order summary noting free shipping and that online access starts as soon as payment goes through." loading="lazy"></div>
+      <figcaption>Checkout shows where you are, and says plainly that access starts immediately.</figcaption>
+    </figure>
+
+    <div class="read">
+      <section class="block">
+        <span class="step">Step 4 · Find the answer</span>
+        <h2>A reader built for dense legal content</h2>
+        <p>Once they've paid, the promise has to hold. The reader is where I spent the most design time, because this is the screen people come back to every week.</p>
+        <ul>
+          <li><b>Always know where you are.</b> A breadcrumb, the full chapter list on the left, and an outline of the current chapter on the right.</li>
+          <li><b>Built for reading.</b> Long legal text set in a serif at a comfortable line length, with plain headings for each topic.</li>
+          <li><b>Action next to the law.</b> The forms and policies for each chapter sit beside it, so reading about New York overtime leads straight to the overtime policy template.</li>
+          <li><b>Practice, not just rules.</b> Recommended practices are called out separately from the legal requirements.</li>
+          <li><b>Your shortcuts.</b> Star a chapter and it shows up on your dashboard next time.</li>
+        </ul>
+      </section>
+    </div>
+
+    <figure class="figure"><div class="frame"><img src="images/hrsimple-reader.webp" width="1600" height="865" decoding="async" alt="The signed-in reader: chapter list with stars and forms for the chapter on the left, the New York Wages and hours chapter in the center with an Overtime section and a recommended-practice callout, and an on-this-page outline with an Access active label on the right." loading="lazy"></div>
+      <figcaption>The reader. Chapter list, the law, its forms, and an outline, all on one screen.</figcaption>
+    </figure>
+
+    <div class="read">
+      <section class="block">
+        <span class="step">Behind the scenes</span>
+        <h2>Keeping the content current, and the business running</h2>
+        <p>The law changes, so the content can't be static. Editors work in a simple editor with guidelines beside it, and every change is saved as a version with a note and a date, so a partner attorney can see exactly what changed and when. Any chapter can be marked as a free sample, which is what feeds Step 1.</p>
+        <p>Staff were the other users. I sat with them and watched how they handled orders, renewals, trials, and shipping instead of asking what they needed. I then rebuilt the order screens around that work: one searchable table, filters for free trials and trial conversions, discount-code tracking, access status, phone orders, and shipping labels in the same place. Their workload dropped 75 percent, and the time that freed up went into sales.</p>
+      </section>
+    </div>
+
+    <figure class="figure"><div class="frame"><img src="images/hrsimple-editor.webp" width="1600" height="803" decoding="async" alt="The chapter editor: publishing guidelines on the left, title and rich-text content in the center with Published and Free sample chapter options, and a version history on the right with notes and dates." loading="lazy"></div>
+      <figcaption>Editing with version history, so every legal update is traceable.</figcaption>
+    </figure>
+
+    <figure class="figure"><div class="frame"><img src="images/hrsimple-orders.webp" width="1600" height="827" decoding="async" alt="The staff orders screen: search, date range, Export CSV, filter chips for free trials, trial conversions, discount codes, and needs shipping, and a table of sample orders showing access status, payment, and shipping actions." loading="lazy"></div>
+      <figcaption>Orders, trials, and shipping in one table. Sample data with customer details masked.</figcaption>
+    </figure>
+
+    <div class="read">
+      <section class="block">
+        <h2>Accessibility as a practice</h2>
+        <p>Legal content has to work for everyone who's responsible for it. I audited every page against WCAG and tested with the NVDA screen reader, not just automated checkers. In 2021 I shipped an accessibility retrofit without a redesign: skip links, focus states, ARIA labels, and contrast fixes. I published the work as peer-reviewed research at ACM SIGDOC, showing that accessibility work also improves search visibility.</p>
+      </section>
+
+      <section class="block">
+        <h2>Where it landed</h2>
+        <ul>
+          <li><b>A product people paid for.</b> 10,000 paying clients across 23 state employment-law libraries, plus forms and SHRM- and HRCI-certified webinars.</li>
+          <li><b>A business that ran better.</b> Staff workload down 75 percent, and the B2B pipeline doubled from $800K to $1.6M in one year.</li>
+          <li><b>A structure that lasted.</b> The books, chapters, and sections model from the first weeks powered search, the reader, favorites, and SEO for eight years without a rebuild.</li>
+          <li><b>Research others can use.</b> A peer-reviewed paper at ACM SIGDOC '21 on accessibility and design-to-code practice.</li>
+        </ul>
+        <p class="note-line">The screens on this page are a redesign based on the production Rails views. Book titles, authors, and chapter names come from the published HR Compliance Library. Chapter text is summarized, prices are left out, and customer details are masked.</p>
+        <p class="sources">Sources: <a href="https://bookwire.com/book/USA/New-York-Human-Resources-Manual-9781946262837-Pasek-Jeffrey-70612138" target="_blank" rel="noopener">New York Human Resources Manual (ACCR, 2019)</a>, <a href="https://doi.org/10.1145/3472714.3473664" target="_blank" rel="noopener">Grant, "Accountability for the hidden codes toward a better user experience," ACM SIGDOC '21</a></p>
+      </section>
+    </div>
+
+    <nav class="next" aria-label="Case studies">
+      <a href="common-voice.html"><small>Previous</small><strong>← Common Voice</strong></a>
+      <a href="about.html"><small>Next</small><strong>About me →</strong></a>
+    </nav>
+  </main>
+
+  <footer class="site-foot">
+    <span>© 2026 Justin Grant</span>
+    <nav aria-label="Footer">
+      <a href="https://www.linkedin.com/in/justgrant5/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume.html">Résumé</a>
+      <a href="index.html#contact">Email</a>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

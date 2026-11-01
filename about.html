@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Justin Grant</title>
+<meta name="description" content="About Justin Grant, UX designer and researcher.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Justin Grant">
+<meta name="theme-color" content="#f1f1ee">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Justin Grant">
+<meta property="og:title" content="About — Justin Grant">
+<meta property="og:description" content="About Justin Grant, UX designer and researcher.">
+<link rel="canonical" href="https://justingrant.design/about.html">
+<meta property="og:url" content="https://justingrant.design/about.html">
+<meta property="og:image" content="https://justingrant.design/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Justin Grant, UX designer and researcher for complex SaaS, open-source, and e-commerce products.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23e28a52'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='700' text-anchor='middle' fill='%2323221f'%3EJG%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "mainEntity": {"@type": "Person", "name": "Justin Grant", "jobTitle": "UX Designer and Researcher", "email": "mailto:justin@justingrant.design", "sameAs": ["https://www.linkedin.com/in/justgrant5/"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of California, Santa Cruz"}, {"@type": "CollegeOrUniversity", "name": "University of California, Los Angeles"}], "knowsAbout": ["UX research", "Service design", "Information architecture", "Data governance", "Payment systems", "Complex workflows", "Systems thinking", "Product strategy", "Accessibility"], "url": "https://justingrant.design/"}, "url": "https://justingrant.design/about.html"}</script>
+<link rel="preload" href="fonts/work-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/work-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/work-sans-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Work Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/work-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Hanken Grotesk"; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/hanken-grotesk-latin-600-normal.woff2) format("woff2"); }
+/* Justin Grant — portfolio
+   Light gray, soft orange, green. Work Sans.
+   Layout: one quiet column, unboxed work entries, type does the hierarchy. */
+:root {
+  --bg: #f1f1ee;
+  --paper: #ffffff;
+  --ink: #23221f;
+  --muted: #6b6a64;
+  --rule: #d9d8d2;
+  --orange: #e28a52;
+  --orange-ink: #a9531d;
+  --green: #5f9c6c;
+  --green-ink: #3d6e48;
+  --max: 1040px;
+  --read: 660px;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.55; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-color: var(--orange); }
+a:hover { color: var(--orange-ink); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--green-ink); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { margin: 0; font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
+.brand strong { font-family: "Hanken Grotesk", "Work Sans", system-ui, sans-serif; }
+p { margin: 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.read { max-width: var(--read); }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--paper); padding: 8px 12px; z-index: 10; }
+
+.label { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+/* header + footer */
+.site-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-block: 32px; }
+.brand { text-decoration: none; line-height: 1.25; }
+.brand strong { display: block; font-size: 17px; font-weight: 600; }
+.brand span { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.nav a { text-decoration: none; color: var(--muted); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--ink); }
+.site-foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 24px 48px; margin-top: 96px; border-top: 1px solid var(--rule); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.site-foot nav { display: flex; gap: 24px; }
+.site-foot a { text-decoration: none; }
+.site-foot a:hover { color: var(--ink); }
+
+/* home */
+.hero { padding-block: 56px 72px; }
+.hero h1 { font-size: clamp(30px, 4.2vw, 44px); max-width: 24ch; letter-spacing: -.015em; }
+.hero p { margin-top: 28px; max-width: 36em; font-size: 19px; }
+
+.work { display: grid; gap: 16px; }
+.entry { position: relative; display: grid; grid-template-columns: 1fr; gap: 24px; padding: 20px; margin-inline: -20px; border: 1px solid transparent; border-radius: 16px; text-decoration: none; color: inherit; transition: border-color .2s, background .2s; }
+.entry:hover { border-color: var(--rule); background: rgba(255,255,255,.45); color: inherit; }
+.entry-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 12px; }
+.arrow { color: var(--orange); font-size: 20px; line-height: 1; transition: transform .2s; }
+.entry:hover .arrow { transform: translate(2px, -2px); }
+.entry h2 { font-size: 24px; margin-bottom: 14px; }
+.entry .desc { max-width: 32em; }
+.outcome { margin-top: 32px; }
+.outcome .label { color: var(--green-ink); display: block; margin-bottom: 4px; }
+.outcome p { font-size: 15px; }
+.frame { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; padding: 14px; }
+.frame img { width: 100%; height: auto; border-radius: 4px; }
+@media (min-width: 860px) {
+  .entry { grid-template-columns: 1fr 1fr; gap: 48px; padding: 32px; margin-inline: -32px; align-items: center; }
+  .entry.flip .frame { order: -1; }
+}
+
+.section { padding-top: 104px; }
+.section > h2 { font-size: 28px; max-width: 24ch; }
+.section > .intro { margin-top: 20px; max-width: 36em; }
+.duo { display: grid; gap: 48px; margin-top: 48px; }
+@media (min-width: 860px) { .duo { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.duo .label { display: block; margin-bottom: 16px; }
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.plain b { font-weight: 600; }
+
+.side-work { display: grid; gap: 40px; margin-top: 40px; }
+@media (min-width: 860px) { .side-work { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.side-work h3 { font-size: 21px; margin: 10px 0 12px; }
+
+.contact { padding-top: 104px; }
+.contact h2 { font-size: 28px; max-width: 24ch; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 24px; }
+.email-text { font-size: 20px; user-select: all; }
+.copy, .write { font: inherit; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 9px 16px; border-radius: 99px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; text-decoration: none; }
+.write { background: var(--ink); color: var(--bg); }
+.copy:hover { border-color: var(--green-ink); color: var(--green-ink); }
+.write:hover { background: var(--green-ink); border-color: var(--green-ink); color: #fff; }
+
+/* case pages */
+.back { display: inline-block; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+.case-head { padding-block: 40px 40px; }
+.case-head h1 { font-size: clamp(30px, 4.2vw, 44px); max-width: 22ch; margin-top: 14px; letter-spacing: -.015em; }
+.case-head .lede { margin-top: 24px; max-width: 36em; font-size: 19px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 24px 32px; margin: 0; padding-block: 24px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.facts dt { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 6px 0 0; font-size: 16px; }
+.facts .wide { grid-column: 1 / -1; }
+.facts .wide dt { color: var(--green-ink); }
+.block { padding-top: 64px; }
+.block h2 { font-size: 24px; }
+.block p { margin-top: 16px; }
+.block ul { margin: 16px 0 0; padding-left: 20px; }
+.block li { margin: 10px 0; }
+.pull { margin-top: 28px; font-size: 21px; line-height: 1.45; color: var(--ink); padding-left: 20px; border-left: 2px solid var(--orange); }
+.method { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--green-ink); }
+.figure { margin: 64px 0 0; }
+.figure figcaption { font-size: 15px; color: var(--muted); margin-top: 12px; max-width: var(--read); }
+.next { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 72px; }
+.next a { text-decoration: none; }
+.next small { display: block; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.next strong { font-weight: 500; font-size: 20px; }
+
+/* about + résumé */
+.about { display: grid; gap: 48px; padding-top: 40px; align-items: start; }
+@media (min-width: 860px) { .about { grid-template-columns: 280px 1fr; gap: 64px; } }
+.portrait { aspect-ratio: 1 / 1; max-width: 100%; border-radius: 16px; overflow: hidden; background: var(--paper); border: 1px solid var(--rule); }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about h1 { font-size: clamp(30px, 4.2vw, 40px); letter-spacing: -.015em; }
+.about p { margin-top: 20px; }
+.about .write { display: inline-block; margin-top: 32px; }
+.cv { padding-top: 40px; }
+.cv h1 { font-size: clamp(30px, 4.2vw, 40px); }
+.cv .lede { margin-top: 20px; max-width: 36em; }
+.cv-sec { margin-top: 56px; }
+.cv-sec > h2 { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--green-ink); padding-bottom: 12px; border-bottom: 1px solid var(--rule); }
+.job { padding-block: 24px; border-bottom: 1px solid var(--rule); }
+.job:last-child { border-bottom: 0; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
+.job h3 { font-size: 20px; }
+.job .when { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+.job .org { color: var(--orange-ink); font-size: 16px; margin-top: 2px; }
+.job ul { margin: 12px 0 0; padding-left: 20px; }
+.job li { margin: 6px 0; }
+.cv-skills { margin-top: 16px; }
+.cv .write { display: inline-block; margin-top: 40px; }
+
+@media (prefers-reduced-motion: reduce) { .entry, .arrow { transition: none; } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site-head">
+    <a class="brand" href="index.html"><strong>Justin Grant</strong><span>UX Designer &amp; Researcher</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="about.html" aria-current="page">About</a>
+      <a href="resume.html">Résumé</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="about">
+      <div class="portrait"><img src="images/justin.webp" width="640" height="640" decoding="async" alt="Justin Grant, smiling, in a light denim shirt."></div>
+      <div class="read">
+        <h1>I design how the work works.</h1>
+        <p>I started out building things. For eight years I designed and coded hrsimple.com end to end, from e-commerce for 10,000 paying clients to the internal tools the staff used every day. Watching those staff work taught me more than any spec did. One redesign based on that cut their workload by 75 percent.</p>
+        <p>That pulled me toward research. I did my master's in Human Computer Interaction at UC Santa Cruz, then ran classroom ethnography at McGraw Hill, enterprise discovery for 7,000 users at Indeed, and research and design for Mozilla's Common Voice and Data Collective. Now I'm a VP of Service Design at JPMorgan Chase, mapping how corporate responsibility teams work across the firm.</p>
+        <p>The through-line is the same. I talk to the people doing the work, map the whole system around them, and get product, engineering, and leadership looking at the same picture before we decide what to build. Then I stay in it until it ships.</p>
+        <p>I also mentor HCI grad students at UC Santa Cruz and advise an early-stage AI startup. Before design, I studied philosophy at UCLA, which is probably why I ask "why" so much.</p>
+        <p>Off the clock, I volunteer on Earth science field campaigns, usually carrying sampling poles or fixing an old laptop full of pine needles.</p>
+        <a class="write" href="index.html#contact">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>© 2026 Justin Grant</span>
+    <nav aria-label="Footer">
+      <a href="https://www.linkedin.com/in/justgrant5/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="resume.html">Résumé</a>
+      <a href="index.html#contact">Email</a>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>
