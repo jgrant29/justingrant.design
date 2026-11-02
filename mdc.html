@@ -222,47 +222,44 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     <header class="case-head">
       <span class="label">Mozilla Data Collective | Data Platform | Senior Designer</span>
       <h1>Designing the next phase of an ethical data platform</h1>
-      <p class="lede">Mozilla Data Collective lets communities and organizations share datasets for AI on their own terms. Version one proved people would upload and download. The next phase had a harder job: give data owners real control over who gets their data, give buyers a reason to trust what they download, and build services the platform can grow on. I designed that phase, from the site architecture down to the screens.</p>
-      <p class="badge">Every screen in this case study was built through Claude Code and the Figma MCP server. I didn't place a single pixel by hand.</p>
+      <p class="lede">Mozilla Data Collective lets communities and organizations share datasets for AI on their own terms. Version one proved people would upload and download. The next phase needed to give data owners control over who gets their data, give buyers reasons to trust it, and add services the platform could grow on. I designed that phase, from site architecture to screens.</p>
+      <p class="badge">Every screen here was built through Claude Code and the Figma MCP server. No hand-placed pixels.</p>
     </header>
 
     <dl class="facts">
       <div><dt>Role</dt><dd>Senior designer</dd></div>
       <div><dt>Timeline</dt><dd>2025 – 2026</dd></div>
       <div><dt>Worked with</dt><dd>Product, engineering, R&amp;D, partnerships, and data communities</dd></div>
-      <div><dt>Research</dt><dd>Pricing market research across 200+ datasets, demand survey and false door, flow mapping, open-question reviews</dd></div>
-      <div><dt>Tools</dt><dd>Claude Code and the Figma MCP server. No hand-placed pixels.</dd></div>
-      <div class="wide"><dt>Outcome</dt><dd>The architecture and flows for a platform of 600+ datasets from 190+ vetted organizations in 300+ languages. Request to Access and the Data Assistant launched in May 2026.</dd></div>
+      <div><dt>Research</dt><dd>Pricing research across 200+ datasets, demand survey and false door, flow mapping, open-question reviews</dd></div>
+      <div><dt>Tools</dt><dd>Claude Code and the Figma MCP server</dd></div>
+      <div class="wide"><dt>Outcome</dt><dd>Request to Access and the Data Assistant launched in May 2026. The platform holds 600+ datasets from 190+ vetted organizations in 300+ languages.</dd></div>
     </dl>
 
     <div class="read">
       <section class="block">
         <h2>The problem</h2>
-        <p>Two groups had to trust the platform at the same time, and they wanted opposite things. Data owners, from language communities to archives, wanted to share without losing control: who can download, for what, and on what terms. Buyers wanted to find good data fast, without guessing whether it's documented, licensed properly, or safe to use.</p>
-        <p>Every new feature touched both sides, plus payments, verification, and messaging underneath. Designing them one screen at a time would have made a mess.</p>
-        <p class="pull">Trust in a data platform isn't a badge. It's a set of decisions about who can do what, made visible to everyone involved.</p>
+        <p>Two groups had to trust the platform, and they wanted opposite things. Data owners, from language communities to archives, wanted to share without losing control over who downloads, for what, and on what terms. Buyers wanted to find good data fast, without guessing whether it's documented, properly licensed, or safe to use.</p>
+        <p>Every feature touched both groups, plus payments, verification, and messaging. Designing one screen at a time would have made a mess.</p>
       </section>
 
       <section class="block">
         <span class="step">Step 1 · Validate the market</span>
-        <h2>Find out what data is worth, and what people would pay</h2>
-        <p>Paid datasets and subscriptions only work if the prices make sense. So I started with the market: I researched and catalogued the prices of more than 200 datasets sold elsewhere, then used that range to validate where Mozilla Data Collective's pricing and paid tiers should sit.</p>
-        <p>Then, before committing engineering time, I put a short survey and a false door in front of real users on the browse page. It asked which premium features mattered most, such as unlimited downloads, benchmarks against industry standards, warehouse integrations, and custom data bundles. It also asked what a fair monthly price would be on a slider, and what kind of organization they were.</p>
-        <p class="think"><b>Thinking</b>Market prices tell you what data sells for. Users tell you what they'd pay you for it. Checking one against the other turned a feature list into a pricing case the business could plan around.</p>
+        <h2>What data is worth, and what people would pay</h2>
+        <p>Paid tiers only work if the prices make sense. I catalogued prices for 200+ datasets sold elsewhere and used that range to decide where our pricing and paid tiers should sit.</p>
+        <p>Before committing engineering time, I ran a short survey and a false door on the browse page. It asked which premium features mattered (unlimited downloads, benchmarks, warehouse integrations, custom bundles), what a fair monthly price would be, and what type of organization people worked for.</p>
       </section>
     </div>
 
     <figure class="figure"><div class="frame"><img src="images/mdc-survey.webp" width="1548" height="1401" decoding="async" alt="A feedback request modal over the Browse Datasets page: checkboxes for premium features, a monthly price slider from 0 to 300 US dollars set at 42, organization type options, email consent, and Maybe later and Submit buttons." loading="lazy"></div>
-      <figcaption>The survey and false door on the browse page. One question asks for a price, not just a preference.</figcaption>
+      <figcaption>The survey and false door. It asks for a price, not just a preference.</figcaption>
     </figure>
 
     <div class="read">
       <section class="block">
         <span class="step">Step 2 · Map the whole platform</span>
         <h2>Site architecture before screens</h2>
-        <p>I mapped the platform in three layers: public discovery, an authenticated workspace split by role (uploader and downloader), and the systems that cut across everything: verification, messaging, quality signals, payments, and notifications.</p>
-        <p>Every feature on the map carries its free and paid versions, an estimate of the value it adds, and whether it still needs a flow or a mid-fidelity wireframe. That turned the map into a shared backlog that product, engineering, and R&amp;D could argue with directly.</p>
-        <p class="think"><b>Thinking</b>When one feature touches five systems, the map is the design. It showed us early that access controls, verification, and messaging were one problem, not three.</p>
+        <p>I mapped the platform in three layers: public discovery, a workspace split by role (uploader and downloader), and shared systems such as verification, messaging, quality signals, payments, and notifications.</p>
+        <p>Each feature on the map lists its free and paid versions, expected value, and the design work it still needs. The map became a shared backlog for product, engineering, and R&amp;D, and it showed early that access, verification, and messaging were one problem, not three.</p>
       </section>
     </div>
 
@@ -274,11 +271,11 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <section class="block">
         <span class="step">Step 3 · Data access controls</span>
         <h2>Let owners decide who gets in, without a manual queue</h2>
-        <p>Data owners wanted to approve every download. In practice that means a queue nobody keeps up with. I designed rules instead: an organization is verified once, against a public registry, and screened automatically. The owner then sets rules like "auto-approve verified academic organizations in the US or Canada." Everything else waits for a person.</p>
+        <p>Owners wanted to approve every download, which means a queue nobody keeps up with. I designed rules instead. An organization is verified once against a public registry and screened automatically. Owners then set rules like "auto-approve verified academic organizations in the US or Canada," and everything else waits for review.</p>
         <ul>
-          <li><b>Rules you can test first.</b> Each rule shows how many recent requests it would have approved, and new rules run in report-only mode for two weeks before they're enforced.</li>
-          <li><b>Defaults with exceptions.</b> Organization rules apply to every dataset, and a sensitive dataset can get stricter rules of its own during upload.</li>
-          <li><b>A no that explains itself.</b> Denied requests show the owner's reason and point to similar datasets, so a no doesn't end the visit.</li>
+          <li><b>Test before enforcing.</b> Each rule shows how many recent requests it would have approved, and new rules run in report-only mode for two weeks.</li>
+          <li><b>Defaults with exceptions.</b> Organization rules apply to every dataset. Sensitive datasets can get stricter rules at upload.</li>
+          <li><b>Denials that explain.</b> A denied request shows the owner's reason and links to similar datasets.</li>
         </ul>
       </section>
     </div>
@@ -295,9 +292,8 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <section class="block">
         <span class="step">Step 4 · Data quality signals</span>
         <h2>Five signals buyers can check at a glance</h2>
-        <p>"Is this data any good?" doesn't have one answer. I broke it into five signals that each answer one question: how well it's documented, whether it meets standards like Croissant and FAIR, what the license allows, how access works, and whether a third party has verified it.</p>
-        <p>The free tier gets an automated documentation score. Paid signals add independent audits and validated standards. Each signal opens to show its evidence, such as the validator, the date, and the report.</p>
-        <p class="think"><b>Thinking</b>The documentation score measures completeness, not whether the data is accurate. So the screen says exactly that. A quality signal that overpromises does more damage than having none.</p>
+        <p>"Is this data any good?" doesn't have one answer, so I split it into five signals: documentation, standards (Croissant and FAIR), license, access, and third-party verification.</p>
+        <p>The free tier gets an automated documentation score. Paid tiers add independent audits and validated standards. Each signal opens to show its evidence: validator, date, and report. The documentation score measures completeness, not accuracy, and the screen says so.</p>
       </section>
     </div>
 
@@ -308,9 +304,9 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     <div class="read">
       <section class="block">
         <span class="step">Step 5 · Services and monitoring</span>
-        <h2>A services marketplace the team can actually run</h2>
-        <p>Organizations need more than data. They need curation, annotation, and collection. I designed a services directory where verified providers list what they offer and buyers request to connect, with contact details hidden until both sides agree.</p>
-        <p>The other half is the platform team. Every new listing lands in a review queue where staff check the submission, assign a verification tier, send it back for changes, or deny it with a reason the provider can see. For partnerships too early for the marketplace, a simple contact form goes to the team's shared inbox.</p>
+        <h2>A services marketplace the team can run</h2>
+        <p>Organizations also need curation, annotation, and collection. In the services directory, verified providers list what they offer and buyers request to connect. Contact details stay hidden until both sides agree.</p>
+        <p>New listings go to a review queue, where staff assign a verification tier, send the listing back for changes, or deny it with a reason the provider can see. Partnerships too early for the marketplace go through a simple contact form.</p>
       </section>
     </div>
 
@@ -326,8 +322,8 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <section class="block">
         <span class="step">Underneath it all</span>
         <h2>A brand and system to build on</h2>
-        <p>I wrote the brand guidelines that every screen above follows, ten pages under one idea: <i>Open data, well tended.</i> They cover the logo and its clear space, a palette led by Brand Orange #F07424, 37 named color tokens so nobody hard-codes a hex value, display and body type scales, a 4 px spacing scale with 12, 8, and 4 column grids, and the core components. I rebuilt the design system as code-first components in Claude Code, so engineering built from the same source and handoff went from weeks to days.</p>
-        <p>I also kept decisions visible in the files themselves. Every unresolved choice sits in an "Open question" note on the screen it affects, so product and engineering could resolve it in context instead of in a meeting.</p>
+        <p>I wrote ten pages of brand guidelines under one idea, <i>Open data, well tended</i>: logo and clear space, a palette led by Brand Orange #F07424, 37 named color tokens, type scales, a 4 px spacing scale with 12, 8, and 4 column grids, and core components. I rebuilt the design system as code-first components in Claude Code, so engineering built from the same source and handoff went from weeks to days.</p>
+        <p>Open decisions live in "Open question" notes on the screens they affect, so the team could settle them in context instead of in meetings.</p>
       </section>
     </div>
 
@@ -351,9 +347,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <section class="block">
         <span class="step">How it was made</span>
         <h2>Designed in Figma, without touching a pixel</h2>
-        <p>Every screen, flow, and diagram in this case study was built in Figma through Claude Code and the Figma MCP server. I didn't place a single pixel by hand.</p>
-        <p>The design work didn't go away. It moved. I did the research, wrote the architecture and the access rules, made the product calls, and wrote each screen as a spec: what it's for, what decisions it holds, and what's still open. Claude Code built the frames in Figma from those specs, using the brand system, and I reviewed and redirected them until they were right.</p>
-        <p class="think"><b>Thinking</b>When building screens costs minutes instead of days, the scarce skill is knowing what to build and why. That let a small team explore the whole platform, not just the next feature, and put real flows in front of product and engineering early.</p>
+        <p>The design work didn't go away. It moved. I did the research, wrote the architecture and access rules, made the product calls, and wrote each screen as a spec: its purpose, the decisions it holds, and what's still open. Claude Code built the frames in Figma from those specs using the brand system, and I reviewed and revised them. Because a screen took minutes instead of days, a small team could design the whole platform, not just the next feature.</p>
       </section>
     </div>
 
@@ -361,12 +355,12 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <section class="block">
         <h2>Where it landed</h2>
         <ul>
-          <li><b>Access control launched.</b> Request to Access went live in May 2026, so owners can require approval before a dataset can be downloaded.</li>
-          <li><b>At real scale.</b> Mozilla Data Collective now holds 600+ curated datasets from 190+ vetted organizations in 300+ languages.</li>
-          <li><b>A roadmap with evidence.</b> Pricing research across 200+ datasets, the survey, and the architecture gave the team one map of what to build next, what it's worth, and what's still open.</li>
-          <li><b>Built for payment.</b> The same structure underpins upcoming paid licensing, where data owners set their price and keep 100 percent of the fee.</li>
+          <li><b>Access control launched.</b> Request to Access went live in May 2026, so owners can require approval before download.</li>
+          <li><b>At scale.</b> 600+ curated datasets from 190+ vetted organizations in 300+ languages.</li>
+          <li><b>A roadmap with evidence.</b> The pricing research, survey, and architecture gave the team one view of what to build next, what it's worth, and what's still open.</li>
+          <li><b>Ready for payments.</b> The same structure supports upcoming paid licensing, where owners set the price and keep 100 percent of the fee.</li>
         </ul>
-        <p class="note-line">Screens are design files from 2025 and 2026. Some are mid-fidelity and some features are still in progress. Dataset and organization names are examples.</p>
+        <p class="note-line">Screens are 2025 and 2026 design files. Some are mid-fidelity, and some features are still in progress. Dataset and organization names are examples.</p>
         <p class="sources">Source: <a href="https://www.mozillafoundation.org/en/meet-mozilla/press-center/mozilla-data-collective-standalone-launch-new-features/" target="_blank" rel="noopener">Mozilla Foundation, May 2026</a></p>
       </section>
     </div>

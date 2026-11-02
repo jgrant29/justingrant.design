@@ -207,7 +207,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     <header class="case-head">
       <span class="label">Mozilla Common Voice | Spontaneous Speech</span>
       <h1>Fixing bad voice data before it's recorded</h1>
-      <p class="lede">Most voice datasets are people reading sentences. Real speech isn't like that. Spontaneous Speech asks contributors a question and records their answer, in their own words and language. That makes the data more useful and much easier to get wrong.</p>
+      <p class="lede">Most voice datasets are people reading sentences aloud. Spontaneous Speech asks contributors a question and records the answer in their own words and language. That data is more useful, and easier to get wrong.</p>
     </header>
 
     <dl class="facts">
@@ -222,24 +222,23 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     <div class="read">
       <section class="block">
         <h2>Where bad data comes from</h2>
-        <p>Two failures did the most damage. People recorded in the wrong language, because nothing stopped them. And people got cut off or caught mid-thought, because they didn't know when recording started.</p>
-        <p>Both looked like small UI issues. Both ended up as unusable clips that reviewers had to catch by hand, one at a time.</p>
-        <p class="pull">Fixing bad data after the fact costs reviewer hours. Preventing it at the moment of recording costs a few seconds of the contributor's time. That tradeoff drove every decision.</p>
+        <p>Two failures did the most damage. People recorded in the wrong language because nothing stopped them, and people got cut off because they didn't know when recording started.</p>
+        <p>Both looked like small UI issues, and both produced clips reviewers had to catch by hand. Preventing a bad clip costs the contributor a few seconds. Fixing one costs reviewer hours.</p>
       </section>
 
       <section class="block">
         <h2>Research</h2>
-        <p>Spontaneous Speech was part of the same 30-participant study as the AI assistant and the upload flow. Sessions with contributors and reviewers showed where the bad data came from: contributors didn't know when recording started, reviewers were constantly pausing and relistening with almost no controls, and the community asked for a way to tag speech that mixes languages.</p>
+        <p>Spontaneous Speech was part of a 30-participant study that also covered the AI assistant and the upload flow. Contributors didn't know when recording started, reviewers had almost no playback controls, and the community asked for a way to tag speech that mixes languages.</p>
       </section>
 
       <section class="block">
         <h2>Decisions</h2>
         <ul>
-          <li><b>Language first, everything else locked.</b> The form stays disabled until you pick a contribution language. A reminder stays on screen while you record.</li>
-          <li><b>A five-second countdown.</b> You know exactly when recording starts, and you get a moment to think before you speak. Better answers, fewer retakes.</li>
-          <li><b>Mobile-first and forgiving.</b> Phones are where contributors are. Recording your own voice makes people self-conscious, so the flow makes it easy to try again.</li>
-          <li><b>A player built for transcription.</b> Reviewers were pausing, skipping, and relistening with almost no controls. They got a scrubber, elapsed and remaining time, and five-second skips both ways.</li>
-          <li><b>Tagging for code-switching.</b> The community asked for this. Real speech mixes languages mid-sentence, like Spanish and English, so transcribers can tag phrases by language instead of forcing one label on the clip.</li>
+          <li><b>Language first.</b> The form stays locked until you pick a language, and a reminder stays on screen while you record.</li>
+          <li><b>A five-second countdown.</b> You know when recording starts and get a moment to think. Better answers, fewer retakes.</li>
+          <li><b>Mobile-first and forgiving.</b> Most contributors are on phones, and recording yourself is awkward, so trying again is easy.</li>
+          <li><b>A player built for transcription.</b> A scrubber, elapsed and remaining time, and five-second skips in both directions.</li>
+          <li><b>Code-switching tags.</b> Real speech mixes languages, like Spanish and English, so transcribers can tag phrases by language instead of labeling the whole clip.</li>
         </ul>
       </section>
     </div>
@@ -251,23 +250,22 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     <div class="read">
       <section class="block">
         <h2>Designing for the whole pipeline</h2>
-        <p>The contributor screen is only the front stage. Behind it are reviewers, transcribers, and the people training models on the result. Every choice was judged by what it did to the dataset, not just whether the screen felt good.</p>
-        <p>I built the interactions from the design system's code-first components, so what engineering shipped matched what we tested.</p>
+        <p>The contributor screen is the front stage. Behind it are reviewers, transcribers, and the teams training models. I judged each decision by its effect on the dataset, and built from the design system's code-first components so what shipped matched what we tested.</p>
       </section>
 
       <section class="block">
         <h2>Where it landed</h2>
         <ul>
-          <li><b>A new dataset, not just a feature.</b> Spontaneous Speech 1.0 released in September 2025 in 58 languages. Release 2.0 in December 2025 grew to 62 language datasets.</li>
-          <li><b>Real speech at volume.</b> 357+ hours of unscripted answers collected, the kind of conversational audio that read-aloud datasets can't provide.</li>
-          <li><b>Built for how people talk.</b> Code-switching tags mean speech that mixes languages is kept and labeled, not thrown out.</li>
+          <li><b>A new dataset.</b> Spontaneous Speech 1.0 released in September 2025 in 58 languages. Release 2.0, in December 2025, covers 62.</li>
+          <li><b>Real speech at volume.</b> 357+ hours of unscripted answers, the conversational audio read-aloud datasets can't provide.</li>
+          <li><b>Mixed-language speech kept.</b> Code-switching tags mean it gets labeled, not thrown out.</li>
         </ul>
         <p class="sources">Sources: <a href="https://discourse.mozilla.org/t/release-live-mcv-scripted-speech-24-0-and-spontaneous-speech-2-0/146740" target="_blank" rel="noopener">Common Voice 24.0 release</a></p>
       </section>
     </div>
 
     <figure class="figure"><div class="frame"><img src="images/voice-tagging.webp" width="1400" height="993" decoding="async" alt="Tag tab with a Spanish and English transcript, a highlighted phrase, and a popover to tag it by language." loading="lazy"></div>
-      <figcaption>Tagging for code-switching, a feature the community asked for.</figcaption>
+      <figcaption>Code-switching tags, requested by the community.</figcaption>
     </figure>
 
     <nav class="next" aria-label="Case studies">
