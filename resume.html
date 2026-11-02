@@ -7,7 +7,7 @@
 <meta name="description" content="Résumé of Justin Grant, UX designer and researcher.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Justin Grant">
-<meta name="theme-color" content="#faf9f6">
+<meta name="theme-color" content="#fdfcfa">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Justin Grant">
 <meta property="og:title" content="Résumé — Justin Grant">
@@ -34,7 +34,7 @@
    Light gray, soft orange, green. Work Sans.
    Layout: one quiet column, unboxed work entries, type does the hierarchy. */
 :root {
-  --bg: #faf9f6;
+  --bg: #fdfcfa;
   --paper: #ffffff;
   --ink: #23221f;
   --muted: #6b6a64;
@@ -177,13 +177,13 @@ p { margin: 0; }
 /* Background: soft angles and a light-orange splatter, fixed behind content */
 body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(ellipse 420px 300px at 88% 12%, rgba(247,186,140,.22), transparent 70%),
-    radial-gradient(ellipse 260px 200px at 72% 26%, rgba(247,186,140,.12), transparent 70%),
-    radial-gradient(ellipse 480px 320px at 8% 88%, rgba(247,186,140,.18), transparent 70%),
-    radial-gradient(ellipse 220px 160px at 24% 74%, rgba(247,186,140,.10), transparent 70%),
-    linear-gradient(118deg, transparent 0 64%, rgba(247,186,140,.10) 64% 71%, transparent 71%),
-    linear-gradient(118deg, transparent 0 73%, rgba(247,186,140,.06) 73% 76%, transparent 76%),
-    linear-gradient(162deg, rgba(247,186,140,.08) 0 14%, transparent 14%);
+    radial-gradient(ellipse 420px 300px at 88% 12%, rgba(247,186,140,.14), transparent 70%),
+    radial-gradient(ellipse 260px 200px at 72% 26%, rgba(247,186,140,.08), transparent 70%),
+    radial-gradient(ellipse 480px 320px at 8% 88%, rgba(247,186,140,.11), transparent 70%),
+    radial-gradient(ellipse 220px 160px at 24% 74%, rgba(247,186,140,.06), transparent 70%),
+    linear-gradient(118deg, transparent 0 64%, rgba(247,186,140,.08) 64% 71%, transparent 71%),
+    linear-gradient(118deg, transparent 0 73%, rgba(247,186,140,.05) 73% 76%, transparent 76%),
+    linear-gradient(162deg, rgba(247,186,140,.06) 0 14%, transparent 14%);
 }
 @media (max-width: 700px) { body::before { opacity: .75; } }
 @media print { body::before { display: none; } }
