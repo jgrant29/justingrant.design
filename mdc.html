@@ -203,6 +203,31 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
 }
 @media (max-width: 700px) { body::before { opacity: .75; } }
 @media print { body::before { display: none; } }
+
+.slider { margin-top: 8px; padding-bottom: 40px; }
+.slides { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border-radius: 16px; }
+.slides::-webkit-scrollbar { display: none; }
+.slides:focus-visible { outline: 3px solid var(--orange-ink); outline-offset: 4px; }
+.slide .frame { display: block; }
+.slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; min-width: 0; }
+.slide figcaption { margin-top: 16px; display: grid; gap: 10px; }
+.slide figcaption strong { font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 18px; font-weight: 600; }
+.slide figcaption strong span { color: var(--muted); font-weight: 500; margin-right: 6px; }
+.pi { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; margin: 0; }
+.pi dt { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--orange-ink); }
+.pi div:last-child dt { color: var(--green-ink); }
+.pi dd { margin: 4px 0 0; font-size: 15px; color: var(--ink); line-height: 1.55; }
+.slider-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; }
+.slider-nav button { font: inherit; cursor: pointer; }
+.sbtn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--rule); background: var(--paper); color: var(--ink); font-size: 18px; display: grid; place-items: center; }
+.sbtn:hover { border-color: var(--ink); }
+.sbtn:focus-visible, .dots button:focus-visible { outline: 3px solid var(--orange-ink); outline-offset: 2px; }
+.dots { display: flex; gap: 6px; }
+.dots button { width: 44px; height: 44px; border: 0; background: none; padding: 0; display: grid; place-items: center; }
+.dots button::before { content: ""; width: 28px; height: 4px; border-radius: 4px; background: var(--rule); transition: background .2s; }
+.dots button[aria-current="true"]::before { background: var(--orange); }
+@media (max-width: 700px) { .pi { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .dots button::before { transition: none; } }
 </style>
 </head>
 <body>
@@ -223,15 +248,38 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <span class="label">Mozilla Data Collective | Data Platform | Senior Designer</span>
       <h1>Designing the next phase of an ethical data platform</h1>
       <p class="lede">Mozilla Data Collective lets communities and organizations share datasets for AI on their own terms. Version one proved people would upload and download. The next phase needed to give data owners control over who gets their data, give buyers reasons to trust it, and add services the platform could grow on. I designed that phase, from site architecture to screens.</p>
-      <p class="badge">Every screen here was built through Claude Code and the Figma MCP server. No hand-placed pixels.</p>
     </header>
+
+    <section class="slider" aria-roledescription="carousel" aria-label="Final designs">
+      <div class="slides" id="slides" tabindex="0" aria-label="Final designs, scroll or use the buttons below">
+        <figure class="slide" id="final-1" aria-roledescription="slide" aria-label="1 of 3: Access controls">
+          <a class="frame" href="images/mdc-final-access.webp" aria-label="Open this design full size"><img src="images/mdc-final-access.webp" srcset="images/mdc-final-access-sm.webp 800w, images/mdc-final-access.webp 1600w" sizes="(max-width: 1088px) 100vw, 1040px" width="1600" height="1075" decoding="async" loading="eager" fetchpriority="high" alt="Verification and access controls for Lagos Language Commons: identity verified, screening clear, 18 of 27 requests auto-approved in 30 days, 4 waiting for review, and two approval rules, one enforcing and one in report-only mode, each showing how many recent requests it would have approved."></a>
+          <figcaption><strong><span>1 / 3</span>Access controls</strong>
+            <dl class="pi"><div><dt>Problem</dt><dd>Owners wanted to approve every download, which meant a review queue nobody could keep up with.</dd></div><div><dt>Impact</dt><dd>Rules handle routine requests, and each rule shows what it would have done before it goes live. Request to Access launched in May 2026.</dd></div></dl>
+          </figcaption>
+        </figure>
+        <figure class="slide" id="final-2" aria-roledescription="slide" aria-label="2 of 3: Trust and quality signals">
+          <a class="frame" href="images/mdc-final-quality.webp" aria-label="Open this design full size"><img src="images/mdc-final-quality.webp" srcset="images/mdc-final-quality-sm.webp 800w, images/mdc-final-quality.webp 1600w" sizes="(max-width: 1088px) 100vw, 1040px" width="1600" height="1075" decoding="async" loading="lazy" alt="A dataset page for the Yorùbá Conversational Speech Corpus with a Request access panel and five trust and quality signals: documentation score 8.7 out of 10, Croissant and FAIR standards, CC BY-SA 4.0 licence, gated access, and two third-party verification badges, with the standards evidence expanded."></a>
+          <figcaption><strong><span>2 / 3</span>Trust and quality signals</strong>
+            <dl class="pi"><div><dt>Problem</dt><dd>Buyers couldn't tell whether a dataset was documented, properly licensed, or independently checked without downloading it first.</dd></div><div><dt>Impact</dt><dd>Five signals, each with its evidence one click away, so buyers can judge a dataset before they request it.</dd></div></dl>
+          </figcaption>
+        </figure>
+        <figure class="slide" id="final-3" aria-roledescription="slide" aria-label="3 of 3: Request to connect">
+          <a class="frame" href="images/mdc-final-connect.webp" aria-label="Open this design full size"><img src="images/mdc-final-connect.webp" srcset="images/mdc-final-connect-sm.webp 800w, images/mdc-final-connect.webp 1600w" sizes="(max-width: 1088px) 100vw, 1040px" width="1600" height="1075" decoding="async" loading="lazy" alt="A Request to connect dialog over the Acme Analytics Data Curation service page: provider details, a message, a linked dataset, a note that contact details stay hidden until both organizations accept, and Cancel and Send request buttons."></a>
+          <figcaption><strong><span>3 / 3</span>Request to connect</strong>
+            <dl class="pi"><div><dt>Problem</dt><dd>Organizations needed curation and annotation help, but neither side wanted to share contact details with a stranger.</dd></div><div><dt>Impact</dt><dd>Buyers send a request, and contact details stay hidden until both sides agree. It gives the platform a services marketplace staff can review and run.</dd></div></dl>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="slider-nav" hidden><button class="sbtn" type="button" data-dir="-1" aria-label="Previous design">←</button><div class="dots"><button type="button" aria-label="Show design 1: Access controls" aria-current="true"></button><button type="button" aria-label="Show design 2: Trust and quality signals"></button><button type="button" aria-label="Show design 3: Request to connect"></button></div><button class="sbtn" type="button" data-dir="1" aria-label="Next design">→</button></div>
+    </section>
 
     <dl class="facts">
       <div><dt>Role</dt><dd>Senior designer</dd></div>
       <div><dt>Timeline</dt><dd>2025 – 2026</dd></div>
       <div><dt>Worked with</dt><dd>Product, engineering, R&amp;D, partnerships, and data communities</dd></div>
       <div><dt>Research</dt><dd>Pricing research across 200+ datasets, demand survey and false door, flow mapping, open-question reviews</dd></div>
-      <div><dt>Tools</dt><dd>Claude Code and the Figma MCP server</dd></div>
+      <div><dt>Tools</dt><dd>Figma, Figma MCP, Claude Code</dd></div>
       <div class="wide"><dt>Outcome</dt><dd>Request to Access and the Data Assistant launched in May 2026. The platform holds 600+ datasets from 190+ vetted organizations in 300+ languages.</dd></div>
     </dl>
 
@@ -343,13 +391,6 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
       <p class="figcap">All ten pages of the brand guidelines. Select a page to open it full size.</p>
     </section>
 
-    <div class="read">
-      <section class="block">
-        <span class="step">How it was made</span>
-        <h2>Designed in Figma, without touching a pixel</h2>
-        <p>The design work didn't go away. It moved. I did the research, wrote the architecture and access rules, made the product calls, and wrote each screen as a spec: its purpose, the decisions it holds, and what's still open. Claude Code built the frames in Figma from those specs using the brand system, and I reviewed and revised them. Because a screen took minutes instead of days, a small team could design the whole platform, not just the next feature.</p>
-      </section>
-    </div>
 
     <div class="read">
       <section class="block">
@@ -360,7 +401,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
           <li><b>A roadmap with evidence.</b> The pricing research, survey, and architecture gave the team one view of what to build next, what it's worth, and what's still open.</li>
           <li><b>Ready for payments.</b> The same structure supports upcoming paid licensing, where owners set the price and keep 100 percent of the fee.</li>
         </ul>
-        <p class="note-line">Screens are 2025 and 2026 design files. Some are mid-fidelity, and some features are still in progress. Dataset and organization names are examples.</p>
+        <p class="note-line">The three final designs at the top apply the MDC design system to the wireframes below. The wireframes are 2025 and 2026 design files, some features are still in progress, and all names and numbers in the screens are examples.</p>
         <p class="sources">Source: <a href="https://www.mozillafoundation.org/en/meet-mozilla/press-center/mozilla-data-collective-standalone-launch-new-features/" target="_blank" rel="noopener">Mozilla Foundation, May 2026</a></p>
       </section>
     </div>
@@ -380,6 +421,7 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     </nav>
   </footer>
 </div>
+<script>(function(){var t=document.getElementById("slides");if(!t)return;var n=t.parentNode.querySelector(".slider-nav"),d=n.querySelectorAll(".dots button"),c=t.children.length,i=0,b=matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth";n.hidden=false;function go(k){i=(k+c)%c;t.scrollTo({left:i*t.clientWidth+i*24,behavior:b})}function mark(){var k=Math.round(t.scrollLeft/(t.clientWidth+24));if(k!==i)i=k;d.forEach(function(e,j){e.setAttribute("aria-current",j===i?"true":"false")})}n.querySelectorAll(".sbtn").forEach(function(e){e.addEventListener("click",function(){go(i+ +e.dataset.dir)})});d.forEach(function(e,j){e.addEventListener("click",function(){go(j)})});t.addEventListener("scroll",function(){clearTimeout(t._s);t._s=setTimeout(mark,60)});t.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();go(i+1)}if(e.key==="ArrowLeft"){e.preventDefault();go(i-1)}})})();</script>
 <script>console.log("%c🌱 You found the garden.", "font: 600 16px sans-serif; color: #3d6e48", "\nWhen I'm not designing, I'm growing vegetables. Currently growing: whatever's in season, and a design system.\nSay hi: justin@justingrant.design");</script>
 </body>
 </html>
