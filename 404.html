@@ -144,9 +144,14 @@ main { padding:44px 0 72px; }
 .filters button:hover { color:var(--ink); }
 .filters button[aria-pressed="true"] { color:var(--ink); text-decoration:underline; text-decoration-color:var(--veg, var(--ink)); text-decoration-thickness:2px; text-underline-offset:6px; }
 
-.garden { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:36px 32px; }
+.garden { display:grid; grid-template-columns:minmax(0, 1fr); gap:32px; }
+.garden .sheet { display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 400px); align-items:stretch; }
+.garden .sheet .body { grid-column:1; grid-row:1; padding:26px 8px 26px 28px; gap:16px; }
+.garden .sheet .press { grid-column:2; grid-row:1; align-self:center; }
+.garden .sheet .museum h2 { font-size:clamp(22px, 2.4vw, 27px); line-height:1.2; }
+.garden .sheet .pair { grid-template-columns:1fr 1fr; gap:28px; font-size:16px; }
 .sheet { display:flex; flex-direction:column; background:var(--paper); border-radius:2px; box-shadow:inset 0 0 0 1px var(--rule), var(--sheet-shadow); color:inherit; text-decoration:none; transition:transform .25s ease, box-shadow .25s ease; min-width:0; }
-.sheet:hover { transform:translateY(-3px) rotate(-.3deg); text-decoration:none; }
+.sheet:hover { transform:translateY(-3px) rotate(-.15deg); text-decoration:none; }
 .sheet .press { display:block; aspect-ratio:300 / 230; }
 .sheet .press svg { width:100%; height:100%; display:block; }
 .sheet .body { padding:4px 22px 22px; display:flex; flex-direction:column; gap:14px; flex:1; }
@@ -293,7 +298,6 @@ main { padding:44px 0 72px; }
 .cv .sprout-press { width:min(100%, 340px); }
 
 @media (max-width: 960px) {
-  .garden { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .sheet.feature { grid-row:auto; }
   .specs { grid-template-columns:repeat(2, minmax(0, 1fr)); }
 }
@@ -308,7 +312,10 @@ main { padding:44px 0 72px; }
   body { font-size:16px; }
   .lede { font-size:17px; }
   .detail-sheet .press { aspect-ratio:600 / 360; }
-  .garden { grid-template-columns:1fr; }
+  .garden .sheet { grid-template-columns:1fr; }
+  .garden .sheet .press { grid-column:1; grid-row:1; }
+  .garden .sheet .body { grid-row:2; padding:4px 20px 22px; }
+  .garden .sheet .pair { grid-template-columns:1fr; gap:12px; }
   .sheet.feature, .garden.filtered .sheet.feature { grid-column:auto; }
   .sheet.feature .pair { grid-template-columns:1fr; }
   .sheet.feature .press { flex:none; min-height:0; aspect-ratio:560 / 640; }
