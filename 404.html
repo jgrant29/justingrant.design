@@ -128,7 +128,7 @@ main { padding:44px 0 72px; }
 /* tags: typed text with a small colored dot */
 .tag { font:400 13px/1.4 var(--font-type); display:inline-flex; align-items:center; gap:7px; color:var(--ink); white-space:nowrap; }
 .tag::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--dot, var(--ink-2)); flex:none; }
-.v-eggplant { --dot:var(--i-eggplant); --veg:var(--i-eggplant); }
+.v-tomato { --dot:var(--i-radish); --veg:var(--i-radish); }
 .v-pea { --dot:var(--i-pea); --veg:var(--i-pea); }
 .v-carrot { --dot:var(--i-carrot); --veg:var(--i-carrot); }
 
@@ -255,7 +255,7 @@ main { padding:44px 0 72px; }
 .dots { display:flex; gap:4px; }
 .dots button { width:44px; height:44px; border:0; background:none; padding:0; display:grid; place-items:center; }
 .dots button::before { content:""; width:28px; height:2px; background:var(--rule-strong); }
-.dots button[aria-current="true"]::before { height:3px; background:var(--i-eggplant); }
+.dots button[aria-current="true"]::before { height:3px; background:var(--i-radish); }
 .brand-pages { margin-top:56px; }
 .brand-pages ul { list-style:none; margin:16px 0 0; padding:0; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:22px; }
 @media (min-width:860px) { .brand-pages ul { grid-template-columns:repeat(5, minmax(0, 1fr)); } }
