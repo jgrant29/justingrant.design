@@ -300,6 +300,16 @@ a.frame { cursor:zoom-in; }
 .cv .write { justify-self:start; margin-top:32px; }
 .cv .sprout-press { width:min(100%, 340px); }
 
+@media (max-width: 1060px) {
+  .garden .sheet { grid-template-columns:minmax(0, 1fr) minmax(0, 300px); }
+  .garden .sheet .pair { grid-template-columns:1fr; gap:14px; }
+}
+@media (max-width: 860px) {
+  .garden .sheet { grid-template-columns:1fr; }
+  .garden .sheet .press { grid-column:1; grid-row:1; aspect-ratio:300 / 170; max-height:300px; width:100%; }
+  .garden .sheet .body { grid-column:1; grid-row:2; padding:4px 24px 24px; }
+  .garden .sheet .pair { grid-template-columns:1fr 1fr; gap:24px; }
+}
 @media (max-width: 960px) {
   .sheet.feature { grid-row:auto; }
   .specs { grid-template-columns:repeat(2, minmax(0, 1fr)); }
