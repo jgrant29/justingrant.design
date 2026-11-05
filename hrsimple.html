@@ -234,6 +234,9 @@ main { padding:44px 0 72px; }
 .frame::before { top:-7px; left:22px; transform:rotate(-5deg); }
 .frame::after { top:-6px; right:24px; transform:rotate(4deg); }
 .frame img { width:100%; height:auto; }
+a.frame { cursor:zoom-in; }
+.zoom-hint { display:none; }
+@media (max-width: 640px) { .zoom-hint { display:inline; } }
 .figure figcaption, .figcap { margin-top:12px; font:400 13px/1.5 var(--font-type); color:var(--ink-2); max-width:var(--read); }
 
 .next { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:80px; border-top:1px solid var(--rule-strong); }
@@ -312,6 +315,55 @@ main { padding:44px 0 72px; }
 }
 @media (max-width: 640px) {
   body { font-size:16px; }
+  main { padding:28px 0 56px; }
+  .site-head { padding:16px 0 4px; gap:8px; }
+  .brand strong { font-size:24px; }
+  .nav { gap:4px 18px; flex-wrap:wrap; }
+  .nav a { padding:10px 0; }
+  .hero { margin-bottom:24px; gap:10px; }
+  .hero h1 { font-size:34px; line-height:1.08; }
+  .hero .hand { font-size:24px; margin:0; }
+  .filters { gap:0 18px; margin-bottom:24px; padding-bottom:8px; }
+  .filters button { min-height:44px; font-size:15px; }
+  .garden { gap:24px; }
+  .garden .sheet .press { aspect-ratio:300 / 200; }
+  .garden .sheet .body { gap:14px; }
+  .museum { padding:9px 10px; }
+  .museum .row { flex-wrap:wrap; column-gap:10px; row-gap:2px; }
+  .museum .row span:last-child { text-align:left; }
+  .garden .sheet .museum h2 { font-size:22px; }
+  .sheet .foot { padding-top:4px; }
+  .sheet .foot .more { padding:10px 0; }
+  .section, .contact, .built { margin-top:64px; }
+  .section > h2, .contact h2, .built > h2 { font-size:29px; }
+  .email-row { gap:6px 20px; }
+  .email-text { width:100%; font-size:16px; overflow-wrap:anywhere; }
+  .copy { min-height:44px; padding:10px 0; }
+  .write { min-height:46px; }
+  .specs { grid-template-columns:1fr 1fr; }
+  .specs dt { font-size:32px; }
+  .specs div { padding:14px 12px 14px 0; }
+  .back { padding:10px 0; margin-bottom:12px; }
+  .detail { gap:28px; }
+  .detail-sheet .museum h1 { font-size:30px; }
+  .read { margin-top:48px; gap:40px; }
+  .block h2 { font-size:25px; }
+  .figure { margin-top:40px; }
+  .frame { padding:6px; }
+  .frame::before, .frame::after { width:48px; height:14px; }
+  .figure figcaption { font-size:12.5px; }
+  a.frame::after { }
+  .next { margin-top:56px; gap:0; }
+  .next a { padding:14px 0; border-bottom:1px solid var(--rule); }
+  .slide figcaption strong { font-size:18px; }
+  .brand-pages ul { gap:16px; }
+  .site-foot { flex-direction:column; gap:4px; }
+  .site-foot nav { gap:24px; }
+  .site-foot a { display:inline-block; padding:10px 0; }
+  .about h1, .cv h1 { font-size:34px; }
+  .about .read p { font-size:17px; }
+  .job-head h3 { font-size:19px; }
+  .cv-top .press-sm { max-width:200px; order:-1; }
   .lede { font-size:17px; }
   .detail-sheet .press { aspect-ratio:600 / 360; }
   .garden .sheet { grid-template-columns:1fr; }
@@ -398,8 +450,8 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/hrsimple-preview.webp" width="1600" height="972" decoding="async" alt="A visitor's view of the Wages and hours chapter of the New York Human Resources Manual: breadcrumb, title, update date and authors, two paragraphs that fade out, a panel offering a 7-day free trial or plans, and the chapter outline on the right." loading="lazy"></div>
-      <figcaption>A visitor arrives from search. The outline and authors are visible, and the trial comes first.</figcaption>
+    <figure class="figure"><a class="frame" href="images/hrsimple-preview.webp" aria-label="Open this image full size"><img src="images/hrsimple-preview.webp" width="1600" height="972" decoding="async" alt="A visitor's view of the Wages and hours chapter of the New York Human Resources Manual: breadcrumb, title, update date and authors, two paragraphs that fade out, a panel offering a 7-day free trial or plans, and the chapter outline on the right." loading="lazy"></a>
+      <figcaption>A visitor arrives from search. The outline and authors are visible, and the trial comes first. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <div class="read">
@@ -411,8 +463,8 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/hrsimple-product.webp" width="1600" height="1113" decoding="async" alt="The New York Human Resources Manual product page: plain-English description naming the authors, four included features, the HR Compliance Library publisher note, two plan options with Online access selected, an Add to cart button, a free trial link, and a Chapters tab listing the manual's chapters with two marked as samples." loading="lazy"></div>
-      <figcaption>Coverage, authorship, and format on one page, with the chapter list under the plan choice.</figcaption>
+    <figure class="figure"><a class="frame" href="images/hrsimple-product.webp" aria-label="Open this image full size"><img src="images/hrsimple-product.webp" width="1600" height="1113" decoding="async" alt="The New York Human Resources Manual product page: plain-English description naming the authors, four included features, the HR Compliance Library publisher note, two plan options with Online access selected, an Add to cart button, a free trial link, and a Chapters tab listing the manual's chapters with two marked as samples." loading="lazy"></a>
+      <figcaption>Coverage, authorship, and format on one page, with the chapter list under the plan choice. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <div class="read">
@@ -424,8 +476,8 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/hrsimple-checkout.webp" width="1600" height="748" decoding="async" alt="Step one of a four-step checkout: a cart with the New York manual and a live webinar, a discount code field, and an order summary noting free shipping and that online access starts as soon as payment goes through." loading="lazy"></div>
-      <figcaption>Checkout shows your progress and says access starts immediately.</figcaption>
+    <figure class="figure"><a class="frame" href="images/hrsimple-checkout.webp" aria-label="Open this image full size"><img src="images/hrsimple-checkout.webp" width="1600" height="748" decoding="async" alt="Step one of a four-step checkout: a cart with the New York manual and a live webinar, a discount code field, and an order summary noting free shipping and that online access starts as soon as payment goes through." loading="lazy"></a>
+      <figcaption>Checkout shows your progress and says access starts immediately. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <div class="read">
@@ -443,8 +495,8 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/hrsimple-reader.webp" width="1600" height="865" decoding="async" alt="The signed-in reader: chapter list with stars and forms for the chapter on the left, the New York Wages and hours chapter in the center with an Overtime section and a recommended-practice callout, and an on-this-page outline with an Access active label on the right." loading="lazy"></div>
-      <figcaption>Chapter list, the law, its forms, and an outline on one screen.</figcaption>
+    <figure class="figure"><a class="frame" href="images/hrsimple-reader.webp" aria-label="Open this image full size"><img src="images/hrsimple-reader.webp" width="1600" height="865" decoding="async" alt="The signed-in reader: chapter list with stars and forms for the chapter on the left, the New York Wages and hours chapter in the center with an Overtime section and a recommended-practice callout, and an on-this-page outline with an Access active label on the right." loading="lazy"></a>
+      <figcaption>Chapter list, the law, its forms, and an outline on one screen. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <div class="read">
@@ -456,12 +508,12 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/hrsimple-editor.webp" width="1600" height="803" decoding="async" alt="The chapter editor: publishing guidelines on the left, title and rich-text content in the center with Published and Free sample chapter options, and a version history on the right with notes and dates." loading="lazy"></div>
-      <figcaption>Version history makes every legal update traceable.</figcaption>
+    <figure class="figure"><a class="frame" href="images/hrsimple-editor.webp" aria-label="Open this image full size"><img src="images/hrsimple-editor.webp" width="1600" height="803" decoding="async" alt="The chapter editor: publishing guidelines on the left, title and rich-text content in the center with Published and Free sample chapter options, and a version history on the right with notes and dates." loading="lazy"></a>
+      <figcaption>Version history makes every legal update traceable. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
-    <figure class="figure"><div class="frame"><img src="images/hrsimple-orders.webp" width="1600" height="827" decoding="async" alt="The staff orders screen: search, date range, Export CSV, filter chips for free trials, trial conversions, discount codes, and needs shipping, and a table of sample orders showing access status, payment, and shipping actions." loading="lazy"></div>
-      <figcaption>Orders, trials, and shipping in one table. Sample data with customer details masked.</figcaption>
+    <figure class="figure"><a class="frame" href="images/hrsimple-orders.webp" aria-label="Open this image full size"><img src="images/hrsimple-orders.webp" width="1600" height="827" decoding="async" alt="The staff orders screen: search, date range, Export CSV, filter chips for free trials, trial conversions, discount codes, and needs shipping, and a table of sample orders showing access status, payment, and shipping actions." loading="lazy"></a>
+      <figcaption>Orders, trials, and shipping in one table. Sample data with customer details masked. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <div class="read">

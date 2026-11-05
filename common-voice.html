@@ -234,6 +234,9 @@ main { padding:44px 0 72px; }
 .frame::before { top:-7px; left:22px; transform:rotate(-5deg); }
 .frame::after { top:-6px; right:24px; transform:rotate(4deg); }
 .frame img { width:100%; height:auto; }
+a.frame { cursor:zoom-in; }
+.zoom-hint { display:none; }
+@media (max-width: 640px) { .zoom-hint { display:inline; } }
 .figure figcaption, .figcap { margin-top:12px; font:400 13px/1.5 var(--font-type); color:var(--ink-2); max-width:var(--read); }
 
 .next { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:80px; border-top:1px solid var(--rule-strong); }
@@ -312,6 +315,55 @@ main { padding:44px 0 72px; }
 }
 @media (max-width: 640px) {
   body { font-size:16px; }
+  main { padding:28px 0 56px; }
+  .site-head { padding:16px 0 4px; gap:8px; }
+  .brand strong { font-size:24px; }
+  .nav { gap:4px 18px; flex-wrap:wrap; }
+  .nav a { padding:10px 0; }
+  .hero { margin-bottom:24px; gap:10px; }
+  .hero h1 { font-size:34px; line-height:1.08; }
+  .hero .hand { font-size:24px; margin:0; }
+  .filters { gap:0 18px; margin-bottom:24px; padding-bottom:8px; }
+  .filters button { min-height:44px; font-size:15px; }
+  .garden { gap:24px; }
+  .garden .sheet .press { aspect-ratio:300 / 200; }
+  .garden .sheet .body { gap:14px; }
+  .museum { padding:9px 10px; }
+  .museum .row { flex-wrap:wrap; column-gap:10px; row-gap:2px; }
+  .museum .row span:last-child { text-align:left; }
+  .garden .sheet .museum h2 { font-size:22px; }
+  .sheet .foot { padding-top:4px; }
+  .sheet .foot .more { padding:10px 0; }
+  .section, .contact, .built { margin-top:64px; }
+  .section > h2, .contact h2, .built > h2 { font-size:29px; }
+  .email-row { gap:6px 20px; }
+  .email-text { width:100%; font-size:16px; overflow-wrap:anywhere; }
+  .copy { min-height:44px; padding:10px 0; }
+  .write { min-height:46px; }
+  .specs { grid-template-columns:1fr 1fr; }
+  .specs dt { font-size:32px; }
+  .specs div { padding:14px 12px 14px 0; }
+  .back { padding:10px 0; margin-bottom:12px; }
+  .detail { gap:28px; }
+  .detail-sheet .museum h1 { font-size:30px; }
+  .read { margin-top:48px; gap:40px; }
+  .block h2 { font-size:25px; }
+  .figure { margin-top:40px; }
+  .frame { padding:6px; }
+  .frame::before, .frame::after { width:48px; height:14px; }
+  .figure figcaption { font-size:12.5px; }
+  a.frame::after { }
+  .next { margin-top:56px; gap:0; }
+  .next a { padding:14px 0; border-bottom:1px solid var(--rule); }
+  .slide figcaption strong { font-size:18px; }
+  .brand-pages ul { gap:16px; }
+  .site-foot { flex-direction:column; gap:4px; }
+  .site-foot nav { gap:24px; }
+  .site-foot a { display:inline-block; padding:10px 0; }
+  .about h1, .cv h1 { font-size:34px; }
+  .about .read p { font-size:17px; }
+  .job-head h3 { font-size:19px; }
+  .cv-top .press-sm { max-width:200px; order:-1; }
   .lede { font-size:17px; }
   .detail-sheet .press { aspect-ratio:600 / 360; }
   .garden .sheet { grid-template-columns:1fr; }
@@ -402,8 +454,8 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/voice-shipped.webp" width="1400" height="952" decoding="async" alt="The shipped Spontaneous Speech flow in Common Voice: a prompt card with recording controls, a language reminder, and a submit row." loading="lazy"></div>
-      <figcaption>The shipped answer flow in Common Voice.</figcaption>
+    <figure class="figure"><a class="frame" href="images/voice-shipped.webp" aria-label="Open this image full size"><img src="images/voice-shipped.webp" width="1400" height="952" decoding="async" alt="The shipped Spontaneous Speech flow in Common Voice: a prompt card with recording controls, a language reminder, and a submit row." loading="lazy"></a>
+      <figcaption>The shipped answer flow in Common Voice. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <div class="read">
@@ -423,8 +475,8 @@ main { padding:44px 0 72px; }
       </section>
     </div>
 
-    <figure class="figure"><div class="frame"><img src="images/voice-tagging.webp" width="1400" height="993" decoding="async" alt="Tag tab with a Spanish and English transcript, a highlighted phrase, and a popover to tag it by language." loading="lazy"></div>
-      <figcaption>Code-switching tags, requested by the community.</figcaption>
+    <figure class="figure"><a class="frame" href="images/voice-tagging.webp" aria-label="Open this image full size"><img src="images/voice-tagging.webp" width="1400" height="993" decoding="async" alt="Tag tab with a Spanish and English transcript, a highlighted phrase, and a popover to tag it by language." loading="lazy"></a>
+      <figcaption>Code-switching tags, requested by the community. <span class="zoom-hint">Tap to open full size.</span></figcaption>
     </figure>
 
     <nav class="next" aria-label="Case studies">
