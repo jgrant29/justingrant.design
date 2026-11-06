@@ -138,7 +138,10 @@ main { padding:44px 0 72px; }
 .hero { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:16px 40px; align-items:end; margin-bottom:40px; }
 .hero h1 { font-size:clamp(34px, 5vw, 52px); line-height:1.06; letter-spacing:-.015em; max-width:21ch; }
 .hero p { margin-top:16px; max-width:60ch; color:var(--ink-2); }
-.hero .hand { transform:rotate(-3deg); max-width:220px; text-align:right; margin-bottom:6px; }
+.hero .hand { transform:rotate(-3deg); max-width:230px; text-align:right; margin-bottom:6px; }
+.hand-cta { text-decoration:none; text-underline-offset:5px; }
+.hand-cta:hover { text-decoration:underline; text-decoration-thickness:1.5px; }
+.hand-cta:focus-visible { outline-offset:6px; }
 
 .filters { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 20px; padding-bottom:14px; margin-bottom:32px; border-bottom:1px solid var(--rule); }
 .filters button { font:400 16px/24px var(--font-display); background:none; border:0; padding:0; color:var(--ink-2); cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
@@ -419,7 +422,7 @@ a.frame { cursor:zoom-in; }
   <main id="main">
     <section class="hero">
       <div><h1>Hi, I'm Justin, a UX designer who brings systems thinking and strategy to complex products.</h1></div>
-      <span class="hand">currently growing: a design system</span>
+      <a class="hand hand-cta" href="#contact">Open to new work.<br>Let&#8217;s grow something <span aria-hidden="true">&#8595;</span></a>
     </section>
 
     <div class="filters" role="group" aria-label="Filter case studies by field" hidden>
