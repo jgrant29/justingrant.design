@@ -176,6 +176,24 @@ main { padding:44px 0 72px; }
 .garden.filtered .sheet.feature { grid-column:span 2; grid-row:auto; }
 .garden .sheet[hidden] { display:none; }
 
+/* results: the harvest */
+.harvest { margin-top:56px; display:grid; gap:20px; }
+.harvest-h { display:grid; gap:4px; }
+.harvest-h h2 { font:italic 400 clamp(26px, 3vw, 32px)/1.15 var(--font-display); }
+.yields { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:0 36px; border-top:1px solid var(--rule-strong); }
+.yield { margin:0; padding:20px 0 24px; border-bottom:1px solid var(--rule); display:grid; gap:6px; align-content:start; min-width:0; }
+.yield .num { font:400 clamp(36px, 4vw, 48px)/1 var(--font-display); font-variant-numeric:tabular-nums; letter-spacing:-.01em; }
+.yield .what { font-size:15px; line-height:1.5; color:var(--ink); max-width:32ch; }
+.yield .plot { margin-top:8px; }
+.chart { display:block; max-width:100%; height:auto; overflow:visible; }
+.chart .ct { font:400 13px var(--font-type); fill:var(--ink); }
+.chart .ctl { fill:var(--ink-2); }
+.yield figcaption { display:grid; gap:2px; font:400 12px/1.45 var(--font-type); color:var(--ink-2); }
+.yield figcaption a { color:var(--ink-2); }
+.yield-row { display:flex; flex-wrap:wrap; gap:4px 26px; padding:2px 0 2px; }
+.yield-row span { font:400 13px/1.3 var(--font-type); color:var(--ink-2); }
+.yield-row b { display:block; font:400 30px/1.05 var(--font-display); color:var(--ink); font-variant-numeric:tabular-nums; }
+
 /* collector's note: a typed museum label pinned under the specimens */
 .collector { position:relative; max-width:560px; margin:40px 0 0 auto; padding:16px 20px 18px; border:1px solid var(--rule-strong); background:var(--paper); transform:rotate(-.4deg); display:grid; gap:8px; }
 .collector::before { content:""; position:absolute; top:-8px; left:50%; width:64px; height:16px; margin-left:-32px; background:var(--tape); box-shadow:inset 0 0 0 .5px var(--tape-edge); transform:rotate(-3deg); }
@@ -323,6 +341,7 @@ a.frame { cursor:zoom-in; }
   .garden .sheet .pair { grid-template-columns:1fr 1fr; gap:24px; }
 }
 @media (max-width: 960px) {
+  .yields { grid-template-columns:repeat(2, minmax(0, 1fr)); }
   .sheet.feature { grid-row:auto; }
   .specs { grid-template-columns:repeat(2, minmax(0, 1fr)); }
 }
@@ -346,6 +365,8 @@ a.frame { cursor:zoom-in; }
   .filters { gap:0 18px; margin-bottom:24px; padding-bottom:8px; }
   .filters button { min-height:44px; font-size:15px; }
   .garden { gap:24px; }
+  .yields { grid-template-columns:1fr; }
+  .yield-row b { font-size:26px; }
   .collector { margin:28px 0 0; transform:none; }
   .garden .sheet .press { aspect-ratio:300 / 200; }
   .garden .sheet .body { gap:14px; }
@@ -447,6 +468,7 @@ a.frame { cursor:zoom-in; }
           <span class="museum"><span class="row"><span>Specimen 1 of 3</span><span>Data Platform</span></span>
             <h2>Designing the next phase of an ethical data platform</h2>
             <span class="row"><span>Mozilla Data Collective · Senior Designer</span><span>2025–2026</span></span></span>
+          <span class="yield-row"><span><b>600+</b> datasets</span><span><b>300+</b> languages</span></span>
           <span class="pair"><span><b>What I did</b>Site architecture, access controls, quality signals, and a services marketplace for Mozilla's data platform. Pricing research across 200+ datasets, a survey, and a false door tested demand before anything was built.</span><span><b>Outcome</b>Request to Access launched in May 2026. The platform holds 600+ datasets from 190+ vetted organizations in 300+ languages.</span></span>
           <span class="foot"><span class="tag">Data Platform</span><span class="more">Read the case study</span></span>
         </span>
@@ -457,6 +479,7 @@ a.frame { cursor:zoom-in; }
           <span class="museum"><span class="row"><span>Specimen 2 of 3</span><span>Voice AI</span></span>
             <h2>Fixing bad voice data before it's recorded</h2>
             <span class="row"><span>Mozilla Common Voice · 0&#8209;to&#8209;1</span><span>2024–2026</span></span></span>
+          <span class="yield-row"><span><b>62</b> languages</span><span><b>357+</b> hours of speech</span></span>
           <span class="pair"><span><b>What I did</b>Spontaneous Speech records unscripted answers in dozens of languages. Most bad clips came from the wrong language or badly timed recordings, so I designed both out of the recording flow.</span><span><b>Outcome</b>Spontaneous Speech 1.0 shipped in 58 languages, and release 2.0 covers 62. 357+ hours of unscripted speech collected.</span></span>
           <span class="foot"><span class="tag">Voice AI</span><span class="more">Read the case study</span></span>
         </span>
@@ -467,6 +490,7 @@ a.frame { cursor:zoom-in; }
           <span class="museum"><span class="row"><span>Specimen 3 of 3</span><span>HR Compliance</span></span>
             <h2>Making employment law readable, and worth paying for</h2>
             <span class="row"><span>hrsimple.com · Designer &amp; Developer</span><span>2015–2022</span></span></span>
+          <span class="yield-row"><span><b>−75%</b> staff workload</span><span><b>2×</b> B2B pipeline</span></span>
           <span class="pair"><span><b>What I did</b>State employment-law manuals, like the <i>New York Human Resources Manual</i>, sold online. As the sole designer and developer for eight years, I designed the path from search result to subscription and a reader for dense legal content.</span><span><b>Outcome</b>10,000 paying clients across 23 state law libraries. Staff workload down 75 percent, and the B2B pipeline doubled from $800K to $1.6M in one year.</span></span>
           <span class="foot"><span class="tag">HR Compliance</span><span class="more">Read the case study</span></span>
         </span>
@@ -515,7 +539,7 @@ a.frame { cursor:zoom-in; }
       <h2 id="built-h">This site is built light, on purpose.</h2>
       <p class="intro">I directed it and Claude Code wrote it. Plain HTML and CSS with no frameworks or trackers, self-hosted fonts, and WebP images with fixed dimensions. Structured data and an <a href="llms.txt">llms.txt</a> help search engines and AI tools read it. Measured with Lighthouse on November 5, 2026.</p>
       <dl class="specs">
-        <div><dt>187 KB</dt><dd>Home page weight, fonts and images included</dd></div>
+        <div><dt>197 KB</dt><dd>Home page weight, fonts and images included</dd></div>
         <div><dt>8</dt><dd>Requests on the home page</dd></div>
         <div><dt>1.4 KB</dt><dd>JavaScript, for the copy-email button and filters</dd></div>
         <div><dt>0</dt><dd>Frameworks, cookies, or trackers</dd></div>
