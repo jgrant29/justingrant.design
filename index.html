@@ -207,9 +207,9 @@ main { padding:44px 0 72px; }
 .intro { color:var(--ink-2); max-width:var(--read); }
 .duo { display:grid; grid-template-columns:1fr 1fr; gap:24px 56px; margin-top:12px; }
 .duo .label { display:block; font:italic 400 19px/1.3 var(--font-display); color:var(--ink); margin-bottom:8px; }
-.plain, .checks { list-style:none; margin:0; padding:0; border-top:1px solid var(--rule-strong); }
+.plain { list-style:none; margin:0; padding:0; border-top:1px solid var(--rule-strong); }
 .plain li { padding:13px 0; border-bottom:1px solid var(--rule); font-size:16px; line-height:1.55; }
-.plain b, .checks b { font-weight:600; }
+.plain b { font-weight:600; }
 .contact { margin-top:88px; padding-top:28px; border-top:1px solid var(--ink); display:grid; gap:20px; }
 .email-row { display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px; }
 .email-text { font:400 17px/1.4 var(--font-type); color:var(--ink); }
@@ -218,11 +218,6 @@ main { padding:44px 0 72px; }
 .specs div { padding:16px 20px 16px 0; border-bottom:1px solid var(--rule); display:grid; gap:2px; align-content:start; }
 .specs dt { font:400 38px/1.1 var(--font-display); font-variant-numeric:tabular-nums; }
 .specs dd { margin:0; font:400 13px/1.45 var(--font-type); color:var(--ink-2); }
-.checks-h { font:italic 400 24px/1.2 var(--font-display); margin-top:28px; }
-.checks-intro { color:var(--ink-2); max-width:var(--read); }
-.checks { display:grid; grid-template-columns:1fr 1fr; column-gap:48px; border-top:0; }
-.checks li { padding:12px 0; border-top:1px solid var(--rule); display:grid; gap:2px; font-size:15px; line-height:1.5; }
-.checks li span { color:var(--ink-2); }
 
 /* footer */
 .site-foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px 24px; padding:20px 0 36px; border-top:1px solid var(--rule); font:400 13px/1.4 var(--font-type); color:var(--ink-2); }
@@ -417,7 +412,7 @@ a.frame { cursor:zoom-in; }
   .sheet.feature .press { flex:none; min-height:0; aspect-ratio:560 / 640; }
   .hero { grid-template-columns:1fr; }
   .hero .hand { justify-self:start; text-align:left; }
-  .duo, .checks, .pi, .next { grid-template-columns:1fr; }
+  .duo, .pi, .next { grid-template-columns:1fr; }
   .next a:last-child { text-align:left; }
   .cv-top { grid-template-columns:1fr; }
   .cv-top .press-sm { max-width:220px; }
@@ -547,20 +542,6 @@ a.frame { cursor:zoom-in; }
         <div><dt>98+</dt><dd>Lighthouse performance on every page, and 100 for accessibility, best practices, and SEO</dd></div>
         <div><dt>0</dt><dd>Layout shift on load</dd></div>
       </dl>
-      <h3 class="checks-h">Usability heuristics checklist</h3>
-      <p class="checks-intro">I review my work against Nielsen's ten heuristics, so I held this site to them too. It also meets WCAG 2.1 AA.</p>
-      <ul class="checks">
-        <li><b>Visibility of system status</b><span>The current page is marked in the nav, and the copy button confirms the copy.</span></li>
-        <li><b>Match with the real world</b><span>Plain language. Case studies are named by what changed.</span></li>
-        <li><b>User control and freedom</b><span>A skip link, back links, and previous and next links between case studies.</span></li>
-        <li><b>Consistency and standards</b><span>Every case study follows the same structure, with one type and color system.</span></li>
-        <li><b>Error prevention</b><span>No forms to fail, and no dead links.</span></li>
-        <li><b>Recognition rather than recall</b><span>Role, timeline, research, and outcome sit at the top of each case study.</span></li>
-        <li><b>Flexibility and efficiency</b><span>Skimmers get cards and outcomes, readers get the full story, and AI tools get llms.txt.</span></li>
-        <li><b>Aesthetic and minimalist design</b><span>Three case studies, a few final screens each, and one drawing per project.</span></li>
-        <li><b>Help users recover from errors</b><span>If copying fails, the address is selected so you can copy it yourself.</span></li>
-        <li><b>Help and documentation</b><span>Résumé and contact on every page, with sources for public metrics.</span></li>
-      </ul>
     </section>
   </main>
 
