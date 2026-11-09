@@ -133,6 +133,42 @@ main { padding:44px 0 72px; }
 .v-tomato { --dot:var(--i-radish); --veg:var(--i-radish); }
 .v-pea { --dot:var(--i-pea); --veg:var(--i-pea); }
 .v-carrot { --dot:var(--i-carrot); --veg:var(--i-carrot); }
+.v-beet { --dot:var(--i-beet); --veg:var(--i-beet); }
+.v-eggplant { --dot:var(--i-eggplant); --veg:var(--i-eggplant); }
+/* a study in four parts: question, method, finding, change */
+.study { margin:40px 0 0; display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:0 32px; border-top:1px solid var(--ink); }
+.study div { padding:16px 0 22px; display:grid; gap:8px; align-content:start; }
+.study dt { font:400 12px/1.4 var(--font-type); color:var(--ink-2); }
+.study dd { margin:0; font:400 19px/1.4 var(--font-display); }
+.ledger { list-style:none; margin:8px 0 0; padding:0; border-top:1px solid var(--ink); }
+.ledger li { border-bottom:1px solid var(--rule); }
+.ledger a { display:grid; grid-template-columns:minmax(0, .8fr) minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1.25fr); gap:8px 28px; padding:18px 0; color:var(--ink); text-decoration:none; align-items:start; }
+.ledger a:hover .q { text-decoration:underline; text-underline-offset:4px; }
+.ledger .who { font:400 13px/1.45 var(--font-type); color:var(--ink-2); }
+.ledger .who b { display:block; font:600 15px/1.4 var(--font-sans); color:var(--ink); }
+.ledger .q { font:italic 400 18px/1.35 var(--font-display); }
+.ledger .m, .ledger .c { font-size:15px; line-height:1.5; }
+.ledger .m { color:var(--ink-2); }
+.ledger-head { display:grid; grid-template-columns:minmax(0, .8fr) minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1.25fr); gap:8px 28px; font:400 12px/1.4 var(--font-type); color:var(--ink-2); margin-top:12px; }
+.ledger i { display:none; font:400 12px/1.4 var(--font-type); font-style:normal; color:var(--ink-2); }
+.bp-wrap { margin:56px 0 0; }
+.bp-scroll { overflow-x:auto; box-shadow:inset 0 0 0 1px var(--rule), var(--sheet-shadow); background:var(--paper); border-radius:2px; }
+.bp { border-collapse:collapse; width:100%; min-width:760px; font-size:14px; line-height:1.4; }
+.bp caption { caption-side:top; text-align:left; padding:14px 16px 10px; font:400 12px/1.4 var(--font-type); color:var(--ink-2); }
+.bp th, .bp td { padding:12px 14px; text-align:left; vertical-align:top; border-top:1px solid var(--rule); border-left:1px solid var(--rule); }
+.bp th:first-child, .bp td:first-child { border-left:0; }
+.bp thead th { font:italic 400 16px/1.3 var(--font-display); }
+.bp tbody th { font:400 12px/1.4 var(--font-type); color:var(--ink-2); white-space:nowrap; }
+.bp tr.vis td, .bp tr.vis th { border-top:2px dashed var(--rule-strong); }
+.bp .dec { box-shadow:inset 0 0 0 1.5px var(--veg, var(--ink)); font-weight:600; }
+.bp .neg { color:var(--i-radish); } .bp .pos { color:var(--i-kale); }
+@media (max-width: 860px) {
+  .study { grid-template-columns:1fr 1fr; }
+  .ledger-head { display:none; }
+  .ledger a { grid-template-columns:1fr; gap:6px; }
+  .ledger i { display:block; margin-top:6px; }
+}
+@media (max-width: 520px) { .study { grid-template-columns:1fr; } .study dd { font-size:18px; } }
 
 /* ---------- home ---------- */
 .hero { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:16px 40px; align-items:end; margin-bottom:40px; }
@@ -453,7 +489,7 @@ a.frame { cursor:zoom-in; }
       <article class="detail-sheet v-pea">
         <span class="press"><svg class="specimen" viewBox="0 0 600 300" role="img" aria-label="Hand-inked pea specimen"><defs><filter id="w-commonvoicedetail" x="-35%" y="-35%" width="170%" height="170%"><feTurbulence type="fractalNoise" baseFrequency=".02" numOctaves="2" seed="91"/><feDisplacementMap in="SourceGraphic" scale="34"/><feGaussianBlur stdDeviation="5"/></filter></defs><g filter="url(#w-commonvoicedetail)" class="wash"><circle cx="342.8" cy="170.5" r="82.5" style="fill:var(--w-pea-1)"/><circle cx="295.6" cy="119.4" r="55.0" style="fill:var(--w-pea-2)"/><circle cx="222.7" cy="163.3" r="47.5" style="fill:var(--w-kale-2)"/></g><g transform="translate(2.6 -2.2)" class="riso"><path d="M243.6 198.0 Q354.2 222.4 435.3 140.9 Q325.3 122.0 243.6 198.0" style="fill:var(--w-pea-2)" opacity="1"/><path d="M243.6 198.0 Q337.1 162.6 435.3 140.9 Q325.3 122.0 243.6 198.0" style="fill:var(--w-pea-1)" opacity="0.6"/><path d="M260.2 193.7 a11.9 11.5 0 1 0 23.9 0 a11.9 11.5 0 1 0 -23.9 0" style="fill:var(--w-pea-1)" opacity="1"/><path d="M295.0 186.5 a12.3 11.8 0 1 0 24.5 0 a12.3 11.8 0 1 0 -24.5 0" style="fill:var(--w-pea-1)" opacity="1"/><path d="M325.9 177.3 a16.0 15.3 0 1 0 31.9 0 a16.0 15.3 0 1 0 -31.9 0" style="fill:var(--w-pea-1)" opacity="1"/><path d="M361.0 166.1 a14.7 14.1 0 1 0 29.4 0 a14.7 14.1 0 1 0 -29.4 0" style="fill:var(--w-pea-1)" opacity="1"/><path d="M397.4 152.9 a11.6 11.2 0 1 0 23.3 0 a11.6 11.2 0 1 0 -23.3 0" style="fill:var(--w-pea-1)" opacity="1"/><path d="M214.0 163.3 Q191.2 136.8 158.5 148.6 Q181.6 169.7 214.0 163.3" style="fill:var(--w-pea-2)" opacity="0.75"/></g><g fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--i-pea)"><path d="M243.6 198.0 Q354.2 222.4 435.3 140.9 Q325.3 122.0 243.6 198.0" stroke-width="1.35"/><path d="M243.6 198.0 Q354.2 222.4 435.3 140.9 Q325.3 122.0 243.6 198.0" stroke-width="0.6" opacity=".5" transform="translate(0.7 0.7)"/><path d="M243.6 198.0 Q337.1 162.6 435.3 140.9" stroke-width="1.1"/><path d="M243.6 198.0 Q337.1 162.6 435.3 140.9" stroke-width="0.5" opacity=".5" transform="translate(-0.8 -0.2)"/><path d="M260.2 193.7 a11.9 11.5 0 1 0 23.9 0 a11.9 11.5 0 1 0 -23.9 0" stroke-width="1.0"/><path d="M260.2 193.7 a11.9 11.5 0 1 0 23.9 0 a11.9 11.5 0 1 0 -23.9 0" stroke-width="0.5" opacity=".5" transform="translate(0.7 0.2)"/><path d="M268.0 188.9 q2.4 -2.4 6.0 -1.2" stroke-width="0.5"/><path d="M295.0 186.5 a12.3 11.8 0 1 0 24.5 0 a12.3 11.8 0 1 0 -24.5 0" stroke-width="1.0"/><path d="M303.0 181.6 q2.5 -2.5 6.1 -1.2" stroke-width="0.5"/><path d="M325.9 177.3 a16.0 15.3 0 1 0 31.9 0 a16.0 15.3 0 1 0 -31.9 0" stroke-width="1.0"/><path d="M325.9 177.3 a16.0 15.3 0 1 0 31.9 0 a16.0 15.3 0 1 0 -31.9 0" stroke-width="0.5" opacity=".5" transform="translate(-0.4 0.8)"/><path d="M336.2 170.9 q3.2 -3.2 8.0 -1.6" stroke-width="0.5"/><path d="M361.0 166.1 a14.7 14.1 0 1 0 29.4 0 a14.7 14.1 0 1 0 -29.4 0" stroke-width="1.0"/><path d="M370.6 160.2 q2.9 -2.9 7.4 -1.5" stroke-width="0.5"/><path d="M397.4 152.9 a11.6 11.2 0 1 0 23.3 0 a11.6 11.2 0 1 0 -23.3 0" stroke-width="1.0"/><path d="M397.4 152.9 a11.6 11.2 0 1 0 23.3 0 a11.6 11.2 0 1 0 -23.3 0" stroke-width="0.5" opacity=".5" transform="translate(0.0 0.7)"/><path d="M405.0 148.2 q2.3 -2.3 5.8 -1.2" stroke-width="0.5"/><path d="M243.6 198.0 Q234.0 194.8 214.0 163.3" stroke-width="1.2"/><path d="M243.6 198.0 Q234.0 194.8 214.0 163.3" stroke-width="0.5" opacity=".5" transform="translate(-0.5 -0.3)"/><path d="M243.6 198.0 q-8.0 -4.0 -14.0 3.1" stroke-width="0.9"/><path d="M243.6 198.0 q8.0 -4.0 14.0 3.2" stroke-width="0.9"/><path d="M214.0 163.3 L213.9 161.8 L213.9 160.5 L214.1 159.4 L214.3 158.6 L214.5 158.1 L214.6 157.9 L214.4 157.9 L213.9 158.1 L213.2 158.3 L212.1 158.5 L210.7 158.6 L209.0 158.5 L207.0 158.1 L204.9 157.4 L202.7 156.3 L200.6 154.9 L198.5 153.0 L196.7 150.8 L195.2 148.2 L194.0 145.5 L193.2 142.7 L192.9 139.8 L193.1 137.0 L193.6 134.4 L194.5 132.0 L195.7 130.0 L197.0 128.4 L198.5 127.3 L199.9 126.6 L201.2 126.4 L202.3 126.5 L203.1 127.0 L203.6 127.7 L203.6 128.6 L203.2 129.5 L202.4 130.3 L201.2 131.0 L199.7 131.5 L197.9 131.6 L195.9 131.4 L193.9 130.9 L191.9 129.9 L190.0 128.7 L188.3 127.1 L186.9 125.3" stroke-width="0.9"/><path d="M214.0 163.3 L213.9 161.8 L213.9 160.5 L214.1 159.4 L214.3 158.6 L214.5 158.1 L214.6 157.9 L214.4 157.9 L213.9 158.1 L213.2 158.3 L212.1 158.5 L210.7 158.6 L209.0 158.5 L207.0 158.1 L204.9 157.4 L202.7 156.3 L200.6 154.9 L198.5 153.0 L196.7 150.8 L195.2 148.2 L194.0 145.5 L193.2 142.7 L192.9 139.8 L193.1 137.0 L193.6 134.4 L194.5 132.0 L195.7 130.0 L197.0 128.4 L198.5 127.3 L199.9 126.6 L201.2 126.4 L202.3 126.5 L203.1 127.0 L203.6 127.7 L203.6 128.6 L203.2 129.5 L202.4 130.3 L201.2 131.0 L199.7 131.5 L197.9 131.6 L195.9 131.4 L193.9 130.9 L191.9 129.9 L190.0 128.7 L188.3 127.1 L186.9 125.3" stroke-width="0.4" opacity=".5" transform="translate(0.0 0.3)"/><path d="M214.0 163.3 Q191.2 136.8 158.5 148.6 Q181.6 169.7 214.0 163.3" stroke-width="1.15"/><path d="M214.0 163.3 Q191.2 136.8 158.5 148.6 Q181.6 169.7 214.0 163.3" stroke-width="0.5" opacity=".5" transform="translate(0.5 0.1)"/><path d="M214.0 163.3 Q184.5 155.3 165.1 150.4" stroke-width="0.75"/><path d="M203.4 160.5 Q204.7 155.6 200.6 149.3" stroke-width="0.55"/><path d="M203.4 160.5 Q202.1 165.4 195.4 168.9" stroke-width="0.55"/><path d="M192.7 157.7 Q194.5 151.0 188.9 142.3" stroke-width="0.55"/><path d="M192.7 157.7 Q190.9 164.4 181.7 169.1" stroke-width="0.55"/><path d="M182.0 154.8 Q183.6 148.7 178.5 140.7" stroke-width="0.55"/><path d="M182.0 154.8 Q180.4 161.0 172.0 165.3" stroke-width="0.55"/><path d="M171.3 152.0 Q172.2 148.6 169.4 144.2" stroke-width="0.55"/><path d="M171.3 152.0 Q170.4 155.4 165.7 157.8" stroke-width="0.55"/></g><rect x="253.4" y="183.4" width="38" height="12" transform="rotate(75.1 272.4 189.4)" class="tape"/><rect x="395.2" y="141.1" width="38" height="12" transform="rotate(86.4 414.2 147.1)" class="tape"/></svg></span>
         <div class="inner">
-          <div class="museum"><div class="row"><span>Specimen 2 of 3</span><span>Voice AI</span></div>
+          <div class="museum"><div class="row"><span>Specimen 4 of 5</span><span>Voice AI</span></div>
             <h1>Fixing bad voice data before it's recorded</h1>
             <div class="row"><span>Mozilla Common Voice · Spontaneous Speech</span><span>2024–2026</span></div></div>
           <p class="lede">Most voice datasets are people reading sentences aloud. Spontaneous Speech asks contributors a question and records the answer in their own words and language. That data is more useful, and easier to get wrong.</p>
@@ -531,7 +567,7 @@ a.frame { cursor:zoom-in; }
     </figure>
 
     <nav class="next" aria-label="Case studies">
-      <a href="mdc.html"><small>Previous</small><strong>← Mozilla Data Collective</strong></a>
+      <a href="indeed.html"><small>Previous</small><strong>← Indeed</strong></a>
       <a href="hrsimple.html"><small>Next</small><strong>hrsimple →</strong></a>
     </nav>
   </main>
