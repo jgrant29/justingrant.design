@@ -1,6 +1,6 @@
-# Justin Grant, UX Researcher
+# Justin Grant, UX Designer and Researcher
 
-> UX researcher focused on how people trust and verify AI systems, turning ambiguous product questions into decisions teams act on. Rapid one- to two-week research sprints and multi-year programs across enterprise tech, education, HR, and open-source AI. Research at every stage: generative, formative, and summative. Background in product and design.
+> UX designer who starts with research. Designs complex AI and data tools for the people who depend on them: interaction design, information architecture, service design, prototyping in Figma and in code. Research at every stage: generative, formative, and summative. Work across open-source AI, education, enterprise tools, and HR compliance.
 
 Website: https://justingrant.design/
 Contact: justin@justingrant.design
@@ -11,7 +11,7 @@ LinkedIn: https://www.linkedin.com/in/justgrant5/
 - [McGraw Hill ALEKS: the usability tests said it was fine, the classroom said otherwise](https://justingrant.design/aleks.html): classroom contextual inquiry in a regional study with 100+ teachers, checked against 10,000+ survey responses. Real-time signals in the teacher dashboard, usability score up from 73 to 82 (UMUX-Lite), and manual override of AI assignments added to the roadmap.
 - [Indeed: the risk was in how work flowed, not in the technology](https://justingrant.design/indeed.html): 100+ interviews, contextual inquiries and usability tests behind an executive-approved phased plan to move 7,000 users to Jira Cloud. Service blueprint and journey map recreated.
 - [Mozilla Common Voice: fixing bad voice data before it's recorded](https://justingrant.design/common-voice.html): Spontaneous Speech, a 0-to-1 product for unscripted speech. Shipped in 58 languages; 62 language datasets in release 2.0.
-- [hrsimple.com: making employment law readable, and worth paying for](https://justingrant.design/hrsimple.html): eight years, from sales to product manager and UX research lead. 10,000+ paying clients; staff workload cut 75 percent; B2B pipeline doubled to $1.6M.
+- [hrsimple.com: making employment law readable, and worth paying for](https://justingrant.design/hrsimple.html): eight years, from sales to UX designer and developer. 10,000+ paying clients; staff workload cut 75 percent; B2B pipeline doubled to $1.6M.
 
 ## More
 - [About](https://justingrant.design/about.html)
