@@ -3,7 +3,7 @@
 > UX designer who starts with research. Designs complex AI and data tools for the people who depend on them: interaction design, information architecture, service design, prototyping in Figma and in code. Research at every stage: generative, formative, and summative. Work across open-source AI, education, enterprise tools, and HR compliance.
 
 Website: https://justingrant.design/
-Contact: justin@justingrant.design
+Contact: https://justingrant.design/#contact
 LinkedIn: https://www.linkedin.com/in/justgrant5/
 
 ## Case studies
