@@ -7,7 +7,7 @@ Contact: https://justingrant.design/#contact
 LinkedIn: https://www.linkedin.com/in/justgrant5/
 
 ## Case studies
-- [Mozilla Data Collective: designing trust into an open AI data platform](https://justingrant.design/mdc.html)
+- [Mozilla Data Collective: designing an AI data platform, end to end](https://justingrant.design/mdc.html)
 - [Mozilla Common Voice: better voice data, collected at the source](https://justingrant.design/common-voice.html)
 - [hrsimple.com: making employment law easy to find, read, and buy](https://justingrant.design/hrsimple.html)
 - [McGraw Hill ALEKS: taking the research into the classroom](https://justingrant.design/aleks.html)
