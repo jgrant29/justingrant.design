@@ -11,7 +11,6 @@ LinkedIn: https://www.linkedin.com/in/justgrant5/
 - [Mozilla Common Voice: better voice data, collected at the source](https://justingrant.design/common-voice.html)
 - [hrsimple.com: making employment law easy to find, read, and buy](https://justingrant.design/hrsimple.html)
 - [McGraw Hill ALEKS: taking the research into the classroom](https://justingrant.design/aleks.html)
-- [Indeed: planning a 7,000-person migration around how work really flows](https://justingrant.design/indeed.html)
 - [Side projects](https://justingrant.design/side-projects.html)
 
 ## More
