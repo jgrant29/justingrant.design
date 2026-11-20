@@ -89,6 +89,9 @@ main { padding:56px 0 96px; }
 .fpause .i-play, .fpause.paused .i-pause { display:none; }
 .fpause.paused .i-play { display:block; }
 @media (max-width: 700px) { .fpause { bottom:44px; } }
+.fhero .fx { position:absolute; inset:0; overflow:hidden; }
+.fhero .fx canvas { display:block; width:100%; height:100%; }
+.has-fx .credit { right:76px; }
 .sheet { position:relative; z-index:2; background:var(--bg); }
 .has-hero .sheet { margin-top:-32px; border-radius:32px 32px 0 0; box-shadow:0 -24px 60px -24px rgba(0,0,0,.55); }
 .has-hero main { padding-top:72px; }
