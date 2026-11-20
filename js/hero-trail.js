@@ -16,9 +16,9 @@
     return lerp(lerp(lerp(grad(P[AA], x, y, z), grad(P[BA], x - 1, y, z), u), lerp(grad(P[AB], x, y - 1, z), grad(P[BB], x - 1, y - 1, z), u), v),
       lerp(lerp(grad(P[AA + 1], x, y, z - 1), grad(P[BA + 1], x - 1, y, z - 1), u), lerp(grad(P[AB + 1], x, y - 1, z - 1), grad(P[BB + 1], x - 1, y - 1, z - 1), u), v), w);
   }
-  var STOPS = [['2015', 'Sales'], ['2017', 'Content'], ['2019', 'UX design'], ['2023', 'McGraw Hill'], ['2023', 'Indeed'], ['2024', 'Mozilla'], ['2026', 'JPMorganChase']];
-  var DESK = [[.66, .76, 1], [.77, .65, 1], [.69, .53, 1], [.83, .43, 1], [.72, .31, -1], [.85, .2, 1], [.93, .09, -1]];
-  var MOB = [[.1, .43, 1], [.38, .38, 1], [.14, .32, 1], [.6, .28, 1], [.24, .22, 1], [.52, .17, 1], [.86, .1, -1]];
+  var STOPS = [['2015', 'hrsimple.com'], ['2023', 'McGraw Hill'], ['2023', 'Indeed'], ['2024', 'Mozilla'], ['2026', 'JPMorganChase']];
+  var DESK = [[.68, .74, 1], [.8, .58, 1], [.7, .43, -1], [.84, .28, 1], [.93, .1, -1]];
+  var MOB = [[.12, .42, 1], [.5, .34, 1], [.2, .25, 1], [.56, .17, 1], [.86, .1, -1]];
   var W, H, dpr, cell, cols, rows, F, pts, curve, len;
   function size() {
     dpr = Math.min(devicePixelRatio || 1, 1.5); W = host.clientWidth; H = host.clientHeight; c.width = W * dpr; c.height = H * dpr;
